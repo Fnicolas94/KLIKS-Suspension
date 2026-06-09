@@ -257,7 +257,7 @@
       <p>En KLIKS Suspension afinamos cada clik de tu moto: suspensión, motor y preparación completa. Más tracción, más control y más confianza en cada vuelta, sin importar el terreno.</p>
       <div class="cta">
         <a class="btn" href="#contacto">Agendar Servicio</a>
-        <a class="btn ghost" href="#servicios">Ver Servicios</a>
+        <a class="btn ghost" href="#servicios" style="color:#fff;outline-color:var(--yellow)">Ver Servicios</a>
       </div>
     </div>
     <div class="hero-art">
@@ -473,4 +473,111 @@
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <p>"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó
+        <p>"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó perfecta."</p>
+        <div class="who">[Nombre del piloto]</div>
+        <div class="what">Off-Road — Experto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <span class="tag">Contacto</span>
+    <h2 style="font-size:2.2rem;margin-top:10px">Agenda tu servicio</h2>
+    <div class="contact-grid">
+      <div class="c-info">
+        <div><b>Teléfono / WhatsApp</b><a href="tel:+526862765484">(686) 276-5484</a></div>
+        <div><b>Correo</b><a href="mailto:kliks.suspension@gmail.com">kliks.suspension@gmail.com</a></div>
+        <div><b>Dirección</b>Mexicali, Baja California, México</div>
+        <div><b>Horario</b>Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00</div>
+        <div class="social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="TikTok">TT</a>
+        </div>
+      </div>
+      <form id="contact-form" action="https://formspree.io/f/xzdqgnka" method="POST">
+        <input type="hidden" name="_subject" value="Nueva solicitud de servicio — klikssuspension">
+        <div class="field"><label>Nombre</label><input type="text" name="nombre" required placeholder="Tu nombre"></div>
+        <div class="field"><label>Teléfono o correo</label><input type="text" name="contacto" required placeholder="¿Cómo te contactamos?"></div>
+        <div class="field"><label>Moto (marca / modelo / año)</label><input type="text" name="moto" placeholder="Ej. KTM 250 SX-F 2023"></div>
+        <div class="field"><label>Servicio</label>
+          <select name="servicio">
+            <option>Revalve de suspensión</option>
+            <option>Servicio de suspensión</option>
+            <option>Resortes / kits / ride height</option>
+            <option>Servicio de motor</option>
+            <option>Bike build completo</option>
+            <option>Soporte en pista</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field"><label>Mensaje</label><textarea rows="4" name="mensaje" placeholder="Cuéntanos qué sientes en tu moto..."></textarea></div>
+        <button class="btn" type="submit">Enviar</button>
+        <p id="form-status" style="margin-top:14px;font-weight:700"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img src="logo.png" alt="KLIKS Suspension" style="height:64px;width:auto;border-radius:8px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <svg viewBox="0 0 430 100" width="180" height="42" aria-label="KLIKS Suspension" style="display:none"><use href="#kliks-lockup"/></svg>
+        <p style="margin-top:14px;max-width:340px">Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.</p>
+        <p style="margin-top:10px">Mexicali, Baja California, México · <a href="tel:+526862765484" style="color:#9A7B00">(686) 276-5484</a></p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Revalve de suspensión</a></li>
+          <li><a href="#servicios">Servicio de suspensión</a></li>
+          <li><a href="#servicios">Servicio de motor</a></li>
+          <li><a href="#servicios">Bike build completo</a></li>
+          <li><a href="#servicios">Soporte en pista</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#racing">Racing / Blog</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 KLIKS Suspension. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+  // cerrar menú móvil al hacer clic en un enlace
+  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  // envío del formulario a Formspree sin salir de la página
+  document.getElementById('contact-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    status.style.color = '#565C64';
+    status.textContent = 'Enviando...';
+    try {
+      const r = await fetch(this.action, {method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}});
+      if (r.ok) {
+        status.style.color = '#1B7A3D';
+        status.textContent = '¡Mensaje enviado! Te contactamos pronto.';
+        this.reset();
+      } else { throw new Error(); }
+    } catch (err) {
+      status.style.color = '#B3261E';
+      status.textContent = 'Hubo un error al enviar. Intenta de nuevo o márcanos al (686) 276-5484.';
+    }
+  });
+</script>
+</body>
+</html>
