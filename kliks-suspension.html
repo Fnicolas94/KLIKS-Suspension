@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLIKS Suspension — Suspensión y Servicio para Motocross y Off-Road</title>
+<meta name="description" content="KLIKS Suspension: revalve, mantenimiento de suspensión, servicio de motor, preparación completa de moto y soporte en pista para motocross y off-road.">
+<style>
+  :root{
+    --yellow:#FFD200;
+    --yellow-dark:#E6B800;
+    --black:#0D0D0D;
+    --dark:#161616;
+    --dark2:#1F1F1F;
+    --silver:#C9CCD1;
+    --white:#F5F5F5;
+    --max:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-style:italic;text-transform:uppercase;letter-spacing:.5px;line-height:1.15}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;background:var(--yellow);color:var(--black);font-weight:800;text-transform:uppercase;padding:14px 32px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:.2s;letter-spacing:1px;font-size:.95rem;border:none;cursor:pointer}
+  .btn:hover{background:var(--white)}
+  .btn.ghost{background:transparent;color:var(--yellow);outline:2px solid var(--yellow);outline-offset:-2px}
+  .btn.ghost:hover{background:var(--yellow);color:var(--black)}
+  .tag{color:var(--yellow);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:.8rem}
+  section{padding:90px 0}
+
+  /* top bar */
+  .topbar{background:var(--yellow);color:var(--black);font-weight:700;font-size:.85rem;text-align:center;padding:6px 12px}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(13,13,13,.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto}
+  .logo{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase}
+  .logo span{color:var(--yellow)}
+  .logo small{display:block;font-size:.6rem;letter-spacing:4px;color:var(--silver);font-style:normal}
+  nav ul{display:flex;gap:28px;list-style:none;align-items:center}
+  nav a{font-weight:600;text-transform:uppercase;font-size:.85rem;letter-spacing:1px;padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
+  nav a:hover{color:var(--yellow);border-color:var(--yellow)}
+  .burger{display:none;background:none;border:none;color:var(--yellow);font-size:1.8rem;cursor:pointer}
+
+  /* hero */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;background:
+    linear-gradient(105deg,rgba(13,13,13,.95) 35%,rgba(13,13,13,.6) 70%,rgba(255,210,0,.18)),
+    repeating-linear-gradient(115deg,#141414 0 60px,#101010 60px 120px)}
+  .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--yellow) 60%,transparent)}
+  .hero .wrap{padding-top:60px;padding-bottom:60px}
+  .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);max-width:780px;margin:18px 0}
+  .hero h1 em{color:var(--yellow);font-style:italic}
+  .hero p{max-width:620px;color:var(--silver);font-size:1.1rem;margin-bottom:34px}
+  .hero .cta{display:flex;gap:16px;flex-wrap:wrap}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+  .hero-art svg{width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.6))}
+  .logo-svg{display:block}
+
+  /* marquee strip */
+  .strip{background:var(--yellow);color:var(--black);font-weight:900;text-transform:uppercase;font-style:italic;overflow:hidden;white-space:nowrap;padding:10px 0;font-size:1rem;letter-spacing:2px}
+  .strip span{display:inline-block;padding:0 30px}
+
+  /* services */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:26px;margin-top:48px}
+  .card{background:var(--dark2);padding:34px 28px;border-top:4px solid var(--yellow);transition:.25s;position:relative}
+  .card:hover{transform:translateY(-6px);background:#262626}
+  .card .num{position:absolute;top:14px;right:18px;font-size:2.4rem;font-weight:900;font-style:italic;color:rgba(255,210,0,.18)}
+  .card h3{font-size:1.15rem;margin:14px 0 12px;color:var(--yellow)}
+  .card p{color:var(--silver);font-size:.95rem}
+  .card ul{margin:14px 0 0 18px;color:var(--silver);font-size:.9rem}
+  .icon{width:54px;height:54px;background:var(--yellow);clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+
+  /* process */
+  .process{background:var(--dark)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:48px;counter-reset:step}
+  .step{padding:26px;background:var(--black);border-left:4px solid var(--yellow)}
+  .step::before{counter-increment:step;content:"0" counter(step);font-size:1.6rem;font-weight:900;font-style:italic;color:var(--yellow)}
+  .step h3{font-size:1rem;margin:10px 0 8px}
+  .step p{color:var(--silver);font-size:.9rem}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .about p{color:var(--silver);margin-bottom:18px}
+  .badge-box{background:var(--dark2);padding:40px;border:2px solid var(--yellow);text-align:center}
+  .badge-box .big{font-size:3.2rem;font-weight:900;font-style:italic;color:var(--yellow)}
+  .badge-box .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+  .badge-box .row div span{font-size:1.8rem;font-weight:900;color:var(--yellow);display:block;font-style:italic}
+  .badge-box .row div small{color:var(--silver);text-transform:uppercase;letter-spacing:1px;font-size:.7rem}
+
+  /* racing blog */
+  .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:44px}
+  .post{background:var(--dark2);display:flex;flex-direction:column;border-top:4px solid var(--yellow);transition:.25s}
+  .post:hover{transform:translateY(-6px);background:#262626}
+  .post-img{height:170px;background:repeating-linear-gradient(115deg,#1a1a1a 0 40px,#141414 40px 80px);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2rem;color:var(--silver);border-bottom:2px solid var(--yellow)}
+  .post-img span{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;margin-top:6px}
+  .post-body{padding:24px 24px 28px}
+  .post-meta{color:var(--yellow);font-size:.75rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:10px}
+  .post h3{font-size:1.05rem;margin-bottom:10px}
+  .post p{color:var(--silver);font-size:.92rem;margin-bottom:14px}
+  .post .more{color:var(--yellow);font-weight:700;text-transform:uppercase;font-size:.8rem;letter-spacing:1px}
+  .post .more:hover{color:var(--white)}
+
+  /* testimonials */
+  .testi{background:var(--dark)}
+  .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:48px}
+  .t-card{background:var(--black);padding:32px;border-bottom:4px solid var(--yellow)}
+  .t-card p{color:var(--silver);font-style:italic;margin-bottom:18px}
+  .t-card .who{font-weight:800;text-transform:uppercase;color:var(--yellow);font-size:.9rem;letter-spacing:1px}
+  .t-card .what{font-size:.78rem;color:var(--silver);text-transform:uppercase;letter-spacing:1px}
+  .stars{color:var(--yellow);margin-bottom:12px;letter-spacing:3px}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px}
+  .c-info div{margin-bottom:22px}
+  .c-info b{color:var(--yellow);text-transform:uppercase;font-size:.8rem;letter-spacing:2px;display:block;margin-bottom:4px}
+  form .field{margin-bottom:16px}
+  input,select,textarea{width:100%;background:var(--dark2);border:1px solid #333;color:var(--white);padding:13px 15px;font-size:.95rem;font-family:inherit}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
+  label{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--silver);display:block;margin-bottom:5px}
+
+  /* footer */
+  footer{background:var(--dark);border-top:4px solid var(--yellow);padding:50px 0 30px}
+  .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+  footer h4{color:var(--yellow);text-transform:uppercase;font-style:italic;margin-bottom:14px;font-size:1rem}
+  footer ul{list-style:none}
+  footer li{margin-bottom:8px}
+  footer a:hover{color:var(--yellow)}
+  footer p,footer li{color:var(--silver);font-size:.9rem}
+  .social{display:flex;gap:14px;margin-top:16px}
+  .social a{width:40px;height:40px;border:2px solid var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--yellow);transition:.2s;font-size:.8rem}
+  .social a:hover{background:var(--yellow);color:var(--black)}
+  .copy{text-align:center;border-top:1px solid #2a2a2a;padding-top:22px;color:#777;font-size:.8rem}
+
+  @media(max-width:860px){
+    nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:var(--black);flex-direction:column;padding:20px;gap:18px;border-bottom:2px solid var(--yellow)}
+    nav ul.open{display:flex}
+    .burger{display:block}
+    .about,.contact-grid,.hero-grid{grid-template-columns:1fr}
+    .f-grid{grid-template-columns:1fr}
+    .hero-art{max-width:420px;margin:0 auto}
+    section{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Gráficos KLIKS (SVG) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="kliks-chrome" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAFAFA"/>
+      <stop offset=".45" stop-color="#C9CCD1"/>
+      <stop offset=".55" stop-color="#8D939B"/>
+      <stop offset="1" stop-color="#E8EAEC"/>
+    </linearGradient>
+    <linearGradient id="kliks-metal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#555"/>
+      <stop offset=".5" stop-color="#1E1E1E"/>
+      <stop offset="1" stop-color="#4A4A4A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Amortiguador -->
+  <symbol id="kliks-shock" viewBox="0 0 120 220">
+    <circle cx="60" cy="18" r="16" fill="#3A3A3A" stroke="#C9CCD1" stroke-width="3"/>
+    <circle cx="60" cy="18" r="7" fill="#111"/>
+    <rect x="44" y="28" width="32" height="14" fill="#2C2C2C"/>
+    <rect x="38" y="40" width="44" height="64" rx="10" fill="url(#kliks-metal)" stroke="#111" stroke-width="2"/>
+    <rect x="38" y="47" width="44" height="6" fill="#FFD200" opacity=".9"/>
+    <rect x="52" y="102" width="16" height="84" fill="url(#kliks-chrome)" stroke="#111" stroke-width="1.5"/>
+    <path d="M90 118 L30 136 M90 146 L30 164" stroke="#E6B800" stroke-width="7" stroke-linecap="round" fill="none" opacity=".85"/>
+    <path d="M30 108 L90 118 M30 136 L90 146 M30 164 L90 174" stroke="#FFD200" stroke-width="9" stroke-linecap="round" fill="none"/>
+    <circle cx="60" cy="198" r="14" fill="#3A3A3A" stroke="#C9CCD1" stroke-width="3"/>
+    <circle cx="60" cy="198" r="6" fill="#111"/>
+  </symbol>
+
+  <!-- Lockup horizontal (header / footer) -->
+  <symbol id="kliks-lockup" viewBox="0 0 430 100">
+    <polygon points="300,14 426,4 418,17 318,27" fill="#FFD200"/>
+    <polygon points="316,32 408,25 402,35 330,41" fill="#C9CCD1"/>
+    <use href="#kliks-shock" x="-2" y="2" width="52" height="96" transform="rotate(-20 24 50)"/>
+    <text x="58" y="56" font-family="'Arial Black',Arial,sans-serif" font-style="italic" font-weight="900" font-size="50" fill="url(#kliks-chrome)" stroke="#0D0D0D" stroke-width="1.5">KLIKS</text>
+    <text x="62" y="84" font-family="Arial,sans-serif" font-style="italic" font-weight="800" font-size="18" letter-spacing="5" fill="#FFD200">SUSPENSION</text>
+  </symbol>
+
+  <!-- Emblema completo (hero / nosotros) -->
+  <symbol id="kliks-emblem" viewBox="0 0 560 330">
+    <polygon points="150,52 548,22 530,44 225,72" fill="#FFD200"/>
+    <polygon points="200,84 470,64 458,78 240,96" fill="#C9CCD1"/>
+    <polygon points="160,262 520,238 552,258 185,288" fill="#FFD200"/>
+    <polygon points="230,296 430,284 420,298 260,308" fill="#C9CCD1" opacity=".7"/>
+    <circle cx="530" cy="80" r="4" fill="#FFD200"/>
+    <circle cx="125" cy="245" r="5" fill="#FFD200"/>
+    <circle cx="545" cy="270" r="4" fill="#C9CCD1"/>
+    <use href="#kliks-shock" x="18" y="36" width="140" height="256" transform="rotate(-26 88 164)"/>
+    <g transform="rotate(-3 340 200)">
+      <text x="168" y="176" font-family="'Arial Black',Arial,sans-serif" font-style="italic" font-weight="900" font-size="92" fill="url(#kliks-chrome)" stroke="#0D0D0D" stroke-width="2.5">KLIKS</text>
+      <polygon points="182,192 530,180 516,232 168,244" fill="#0D0D0D" stroke="#FFD200" stroke-width="5"/>
+      <text x="212" y="226" font-family="Arial,sans-serif" font-style="italic" font-weight="800" font-size="32" letter-spacing="5" fill="#F5F5F5">SUSPENSION</text>
+    </g>
+  </symbol>
+</svg>
+
+<div class="topbar">⚡ Agenda tu servicio hoy — Llámanos: <a href="tel:+526862765484" style="color:inherit;font-weight:800">(686) 276-5484</a> · Mexicali, B.C.</div>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#inicio" aria-label="KLIKS Suspension"><svg class="logo-svg" viewBox="0 0 430 100" width="206" height="48"><use href="#kliks-lockup"/></svg></a>
+    <nav>
+      <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+      <ul id="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#racing">Racing</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#contacto" class="btn" style="padding:10px 22px">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag">Taller especializado en motocross y off-road</span>
+      <h1>Tu suspensión, ajustada a <em>tu forma de rodar</em></h1>
+      <p>En KLIKS Suspension afinamos cada clik de tu moto: suspensión, motor y preparación completa. Más tracción, más control y más confianza en cada vuelta, sin importar el terreno.</p>
+      <div class="cta">
+        <a class="btn" href="#contacto">Agendar Servicio</a>
+        <a class="btn ghost" href="#servicios">Ver Servicios</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 560 330" aria-label="KLIKS Suspension"><use href="#kliks-emblem"/></svg>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><span>Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽ Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽</span></div>
+
+<section id="servicios">
+  <div class="wrap">
+    <span class="tag">Lo que hacemos</span>
+    <h2 style="font-size:2.2rem;margin-top:10px">Servicios pensados para mejorar tu rodada</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="num">01</span>
+        <div class="icon">🛠️</div>
+        <h3>Revalve de Suspensión</h3>
+        <p>Modificamos internamente tu horquilla y amortiguador según tu peso, nivel y tipo de terreno. Setup personalizado, no genérico.</p>
+        <ul>
+          <li>Perfil de piloto personalizado</li>
+          <li>Pistones y shims a la medida</li>
+          <li>Pruebas y ajuste fino</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <div class="icon">🔧</div>
+        <h3>Servicio de Suspensión</h3>
+        <p>Mantenimiento completo: cambio de aceite, sellos, bujes e inspección de componentes para que tu suspensión trabaje como nueva.</p>
+        <ul>
+          <li>Cambio de sellos y aceite</li>
+          <li>Inspección de barras y botellas</li>
+          <li>Ajuste de SAG y precarga</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <div class="icon">🌀</div>
+        <h3>Resortes y Kits</h3>
+        <p>Conversión de resortes, kits para horquilla y ajuste de altura (ride height) según tu peso y estilo de manejo.</p>
+        <ul>
+          <li>Kit de conversión de resortes</li>
+          <li>Kits para horquilla</li>
+          <li>Modificación de altura</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <div class="icon">⚙️</div>
+        <h3>Servicio de Motor</h3>
+        <p>Reconstrucción y modificación de motor con piezas OEM o aftermarket, buscando el balance ideal entre potencia y durabilidad.</p>
+        <ul>
+          <li>Top-end y bottom-end</li>
+          <li>Mejoras de rendimiento</li>
+          <li>Diagnóstico completo</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">05</span>
+        <div class="icon">🏍️</div>
+        <h3>Bike Build Completo</h3>
+        <p>Preparación total de tu moto desde el chasis: combinamos suspensión, motor y mantenimiento para entregarla lista para competir.</p>
+        <ul>
+          <li>Reconstrucción integral</li>
+          <li>Preparación pre-carrera</li>
+          <li>Mantenimiento programado</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">06</span>
+        <div class="icon">🏁</div>
+        <h3>Soporte en Pista</h3>
+        <p>Te acompañamos en carreras y eventos seleccionados con ajustes de suspensión y asistencia técnica directamente en la pista.</p>
+        <ul>
+          <li>Ajustes el día del evento</li>
+          <li>Asesoría de setup</li>
+          <li>Atención a pilotos y equipos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="proceso">
+  <div class="wrap">
+    <span class="tag">Cómo trabajamos</span>
+    <h2 style="font-size:2.2rem;margin-top:10px">De tu garage a la pista en 4 pasos</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Cuéntanos de ti</h3>
+        <p>Llenas tu perfil de piloto: peso, nivel, terreno y qué sientes que le falta a tu moto.</p>
+      </div>
+      <div class="step">
+        <h3>Diagnóstico</h3>
+        <p>Recibimos tu suspensión o tu moto, la desarmamos e inspeccionamos cada componente.</p>
+      </div>
+      <div class="step">
+        <h3>Trabajo a la medida</h3>
+        <p>Ejecutamos el servicio o revalve con especificaciones calculadas para tu caso, no plantillas.</p>
+      </div>
+      <div class="step">
+        <h3>Entrega y seguimiento</h3>
+        <p>Te entregamos con setup recomendado y damos seguimiento para afinar cliks después de rodar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap about">
+    <div>
+      <span class="tag">Nosotros</span>
+      <h2 style="font-size:2.2rem;margin:10px 0 24px">La diferencia está en los cliks</h2>
+      <p>KLIKS Suspension nace de la pasión por el off-road y de una idea simple: la mejor moto no es la más cara, es la que está ajustada a su piloto. Por eso cada trabajo que sale de nuestro taller lleva un setup pensado para una sola persona: tú.</p>
+      <p>No vendemos lo que no necesitas. Si tu suspensión solo requiere servicio, te lo decimos. Si tu estilo pide un revalve, te explicamos por qué. Nuestra meta es que tu siguiente rodada sea la mejor que has tenido.</p>
+      <p>Trabajamos con todas las marcas y modelos de motocross, enduro y off-road.</p>
+      <a class="btn" href="#contacto" style="margin-top:10px">Conócenos</a>
+    </div>
+    <div class="badge-box">
+      <svg viewBox="0 0 560 330" style="width:100%;max-width:340px" aria-label="KLIKS Suspension"><use href="#kliks-emblem"/></svg>
+      <p style="color:var(--silver);text-transform:uppercase;letter-spacing:2px;font-size:.8rem">Precisión en cada clik</p>
+      <div class="row">
+        <div><span>+500</span><small>Suspensiones ajustadas</small></div>
+        <div><span>100%</span><small>Setup personalizado</small></div>
+        <div><span>MX</span><small>Enduro / Off-Road</small></div>
+        <div><span>★★★★★</span><small>Pilotos satisfechos</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="racing">
+  <div class="wrap">
+    <span class="tag">Racing</span>
+    <h2 style="font-size:2.2rem;margin-top:10px">Blog de carreras KLIKS Racing</h2>
+    <p style="color:var(--silver);max-width:680px;margin-top:14px">Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.</p>
+    <div class="blog-grid">
+      <article class="post">
+        <div class="post-img">📸<span>Foto de la carrera</span></div>
+        <div class="post-body">
+          <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
+          <h3>[Título de la crónica de carrera]</h3>
+          <p>Resumen de la fecha: cómo les fue a nuestros pilotos, condiciones de la pista y los ajustes de suspensión que marcaron la diferencia.</p>
+          <a class="more" href="#">Leer crónica completa →</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="post-img">📸<span>Foto de la carrera</span></div>
+        <div class="post-body">
+          <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
+          <h3>[Título de la crónica de carrera]</h3>
+          <p>Resumen de la fecha: resultados, anécdotas del paddock y el trabajo de soporte en pista que hicimos durante el evento.</p>
+          <a class="more" href="#">Leer crónica completa →</a>
+        </div>
+      </article>
+      <article class="post">
+        <div class="post-img">📸<span>Foto de la carrera</span></div>
+        <div class="post-body">
+          <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
+          <h3>[Título de la crónica de carrera]</h3>
+          <p>Resumen de la fecha: análisis del terreno, setup recomendado para esa pista y próximas fechas del calendario.</p>
+          <a class="more" href="#">Leer crónica completa →</a>
+        </div>
+      </article>
+    </div>
+    <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap">
+      <a class="btn" href="#">Ver todas las crónicas</a>
+      <a class="btn ghost" href="#contacto">¿Corres? Pide soporte en pista</a>
+    </div>
+  </div>
+</section>
+
+<section class="testi" id="testimonios">
+  <div class="wrap">
+    <span class="tag">Testimonios</span>
+    <h2 style="font-size:2.2rem;margin-top:10px">Lo que dicen nuestros pilotos</h2>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"Después del revalve la moto absorbe todo. Recuperé la confianza en las frenadas con braking bumps y ya no me escupe en los cuadrados."</p>
+        <div class="who">[Nombre del piloto]</div>
+        <div class="what">Motocross — Intermedio</div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"Me explicaron todo el proceso y el porqué de cada ajuste. Se nota que ajustan para tu peso y estilo, no un setup genérico."</p>
+        <div class="who">[Nombre del piloto]</div>
+        <div class="what">Enduro — Amateur</div>
+      </div>
+      <div class="t-card">
+        <div class="stars">★★★★★</div>
+        <p>"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó perfecta."</p>
+        <div class="who">[Nombre del piloto]</div>
+        <div class="what">Off-Road — Experto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <span class="tag">Contacto</span>
+    <h2 style="font-size:2.2rem;margin-top:10px">Agenda tu servicio</h2>
+    <div class="contact-grid">
+      <div class="c-info">
+        <div><b>Teléfono / WhatsApp</b><a href="tel:+526862765484">(686) 276-5484</a></div>
+        <div><b>Correo</b>contacto@klikssuspension.com</div>
+        <div><b>Dirección</b>Mexicali, Baja California, México</div>
+        <div><b>Horario</b>Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00</div>
+        <div class="social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="YouTube">YT</a>
+          <a href="#" aria-label="TikTok">TT</a>
+        </div>
+      </div>
+      <form onsubmit="event.preventDefault();alert('¡Gracias! Te contactaremos pronto. (Conectar al backend o servicio de formularios)');">
+        <div class="field"><label>Nombre</label><input type="text" required placeholder="Tu nombre"></div>
+        <div class="field"><label>Teléfono o correo</label><input type="text" required placeholder="¿Cómo te contactamos?"></div>
+        <div class="field"><label>Moto (marca / modelo / año)</label><input type="text" placeholder="Ej. KTM 250 SX-F 2023"></div>
+        <div class="field"><label>Servicio</label>
+          <select>
+            <option>Revalve de suspensión</option>
+            <option>Servicio de suspensión</option>
+            <option>Resortes / kits / ride height</option>
+            <option>Servicio de motor</option>
+            <option>Bike build completo</option>
+            <option>Soporte en pista</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field"><label>Mensaje</label><textarea rows="4" placeholder="Cuéntanos qué sientes en tu moto..."></textarea></div>
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <svg viewBox="0 0 430 100" width="180" height="42" aria-label="KLIKS Suspension"><use href="#kliks-lockup"/></svg>
+        <p style="margin-top:14px;max-width:340px">Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.</p>
+        <p style="margin-top:10px">Mexicali, Baja California, México · <a href="tel:+526862765484" style="color:var(--yellow)">(686) 276-5484</a></p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Revalve de suspensión</a></li>
+          <li><a href="#servicios">Servicio de suspensión</a></li>
+          <li><a href="#servicios">Servicio de motor</a></li>
+          <li><a href="#servicios">Bike build completo</a></li>
+          <li><a href="#servicios">Soporte en pista</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#racing">Racing / Blog</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© 2026 KLIKS Suspension. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<script>
+  // cerrar menú móvil al hacer clic en un enlace
+  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+</script>
+</body>
+</html>
