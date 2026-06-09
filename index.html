@@ -118,6 +118,22 @@
   .post p{color:var(--silver);font-size:.92rem;margin-bottom:14px}
   .post .more{color:#9A7B00;font-weight:700;text-transform:uppercase;font-size:.8rem;letter-spacing:1px}
   .post .more:hover{color:var(--black)}
+  /* Racing: crónica + galería */
+  .race-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:0;margin-top:44px;background:#fff;border-top:4px solid var(--yellow);overflow:hidden}
+  .race-feature > img{width:100%;height:100%;min-height:300px;object-fit:cover}
+  .race-feature .rf-body{padding:34px 36px}
+  .race-feature .rf-body h3{font-size:1.5rem;margin:8px 0 14px;color:var(--black)}
+  .race-feature .rf-body p{color:var(--silver);margin-bottom:12px;font-size:.98rem}
+  .race-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:18px}
+  .race-gallery figure{margin:0;background:#fff;border-bottom:3px solid var(--yellow);overflow:hidden;display:flex;flex-direction:column}
+  .race-gallery img{width:100%;height:220px;object-fit:cover;transition:.35s;cursor:zoom-in}
+  .race-gallery figure:hover img{transform:scale(1.06)}
+  .race-gallery figcaption{padding:10px 12px;font-size:.82rem;color:var(--silver)}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border:3px solid var(--yellow)}
+  .lightbox .lb-close{position:absolute;top:14px;right:26px;color:#fff;font-size:2.4rem;line-height:1;cursor:pointer;font-weight:800}
+  @media(max-width:760px){.race-feature{grid-template-columns:1fr}}
 
   .testi{background:var(--dark)}
   .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:48px}
@@ -442,39 +458,25 @@
   <div class="wrap">
     <span class="tag" data-i18n="racing_tag">Racing</span>
     <h2 style="font-size:2.2rem;margin-top:10px" data-i18n="racing_h2">Blog de carreras KLIKS Racing</h2>
-    <p class="intro" style="max-width:680px;margin-top:14px" data-i18n="racing_intro">Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.</p>
-    <div class="blog-grid">
-      <article class="post">
-        <div class="post-img"><img src="https://images.unsplash.com/photo-1542550546-88afdd84b64f?q=80&w=800&auto=format&fit=crop" alt="Piloto de motocross en salto" loading="lazy"></div>
-        <div class="post-body">
-          <div class="post-meta" data-i18n="post_meta">[Fecha] · [Pista / Ciudad]</div>
-          <h3 data-i18n="post_title">[Título de la crónica de carrera]</h3>
-          <p data-i18n="post1_p">Resumen de la fecha: cómo les fue a nuestros pilotos, condiciones de la pista y los ajustes de suspensión que marcaron la diferencia.</p>
-          <a class="more" href="#" data-i18n="post_more">Leer crónica completa →</a>
-        </div>
-      </article>
-      <article class="post">
-        <div class="post-img"><img src="https://images.unsplash.com/photo-1596493505147-8fbb92e394e8?q=80&w=800&auto=format&fit=crop" alt="Piloto de motocross en competencia" loading="lazy"></div>
-        <div class="post-body">
-          <div class="post-meta" data-i18n="post_meta">[Fecha] · [Pista / Ciudad]</div>
-          <h3 data-i18n="post_title">[Título de la crónica de carrera]</h3>
-          <p data-i18n="post2_p">Resumen de la fecha: resultados, anécdotas del paddock y el trabajo de soporte en pista que hicimos durante el evento.</p>
-          <a class="more" href="#" data-i18n="post_more">Leer crónica completa →</a>
-        </div>
-      </article>
-      <article class="post">
-        <div class="post-img"><img src="https://images.unsplash.com/photo-1445605081472-9788fb3bc02f?q=80&w=800&auto=format&fit=crop" alt="Salto de motocross en plena carrera" loading="lazy"></div>
-        <div class="post-body">
-          <div class="post-meta" data-i18n="post_meta">[Fecha] · [Pista / Ciudad]</div>
-          <h3 data-i18n="post_title">[Título de la crónica de carrera]</h3>
-          <p data-i18n="post3_p">Resumen de la fecha: análisis del terreno, setup recomendado para esa pista y próximas fechas del calendario.</p>
-          <a class="more" href="#" data-i18n="post_more">Leer crónica completa →</a>
-        </div>
-      </article>
-    </div>
-    <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap">
-      <a class="btn" href="#" data-i18n="racing_btn1">Ver todas las crónicas</a>
-      <a class="btn ghost" href="#contacto" data-i18n="racing_btn2">¿Corres? Pide soporte en pista</a>
+    <p class="intro" style="max-width:700px;margin-top:14px" data-i18n="racing_intro">Vivimos las carreras desde adentro. Aquí está la crónica de nuestra última fecha: resultados, fotos del evento y el trabajo detrás de cada resultado.</p>
+
+    <article class="race-feature">
+      <img src="race-1.jpg" alt="La moto #732 con suspensión KLIKS en el WORCS Round 1, Blythe CA" loading="lazy">
+      <div class="rf-body">
+        <div class="post-meta" data-i18n="rf_meta">WORCS Round 1 · Blythe, CA · 23–25 ene 2026</div>
+        <h3 data-i18n="rf_title">Arrancamos el WORCS 2026 en el podio</h3>
+        <p data-i18n="rf_body1">La primera fecha del WORCS se corrió en la arena del desierto de Blythe, California. La #732, montada sobre suspensión KLIKS, peleó adelante toda la carrera y se subió a lo más alto del podio.</p>
+        <p data-i18n="rf_body2">Un gran arranque de temporada, sumando al palmarés 50+ C 2025 del equipo. Gracias a todos los que nos apoyan fecha tras fecha — esto apenas empieza.</p>
+        <a class="btn ghost" href="#contacto" style="margin-top:6px" data-i18n="racing_btn2">¿Corres? Pide soporte en pista</a>
+      </div>
+    </article>
+
+    <div class="race-gallery">
+      <figure><img src="race-1.jpg" alt="Acción en pista de la #732" loading="lazy" data-full="race-1.jpg"><figcaption data-i18n="cap1">La #732 con suspensión KLIKS atacando la arena de Blythe.</figcaption></figure>
+      <figure><img src="race-2.jpg" alt="Podio de 1er lugar WORCS" loading="lazy" data-full="race-2.jpg"><figcaption data-i18n="cap2">1er lugar en el podio del WORCS Round 1.</figcaption></figure>
+      <figure><img src="race-3.jpg" alt="Premiación 50+ C 2025" loading="lazy" data-full="race-3.jpg"><figcaption data-i18n="cap3">Premiación 50+ C de la temporada 2025 al atardecer.</figcaption></figure>
+      <figure><img src="race-4.jpg" alt="Dos motos saltando en el desierto" loading="lazy" data-full="race-4.jpg"><figcaption data-i18n="cap4">Rueda a rueda en el desierto: la #732 al frente.</figcaption></figure>
+      <figure><img src="race-5.jpg" alt="Moto #732 en el taller KLIKS" loading="lazy" data-full="race-5.jpg"><figcaption data-i18n="cap5">La #732 lista en el taller KLIKS, entre trofeos.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -927,6 +929,8 @@
   </div>
 </footer>
 
+<div class="lightbox" id="lightbox"><span class="lb-close" id="lbClose" aria-label="Cerrar">×</span><img id="lbImg" src="" alt=""></div>
+
 <script>
   // ===== Diccionario de traducción ES / EN =====
   const T = {
@@ -957,7 +961,11 @@
       desert_tag:'Mexicali · Baja California · México', desert_h2:'Forjados en el desierto',
       desert_p:'Arena, piedra, dunas y el calor de la capital de Baja California. Aquí no hay terreno fácil — por eso cada suspensión que sale de KLIKS está probada para aguantar lo más duro del off-road bajacaliforniano.',
       racing_tag:'Racing', racing_h2:'Blog de carreras KLIKS Racing',
-      racing_intro:'Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.',
+      racing_intro:'Vivimos las carreras desde adentro. Aquí está la crónica de nuestra última fecha: resultados, fotos del evento y el trabajo detrás de cada resultado.',
+      rf_meta:'WORCS Round 1 · Blythe, CA · 23–25 ene 2026', rf_title:'Arrancamos el WORCS 2026 en el podio',
+      rf_body1:'La primera fecha del WORCS se corrió en la arena del desierto de Blythe, California. La #732, montada sobre suspensión KLIKS, peleó adelante toda la carrera y se subió a lo más alto del podio.',
+      rf_body2:'Un gran arranque de temporada, sumando al palmarés 50+ C 2025 del equipo. Gracias a todos los que nos apoyan fecha tras fecha — esto apenas empieza.',
+      cap1:'La #732 con suspensión KLIKS atacando la arena de Blythe.', cap2:'1er lugar en el podio del WORCS Round 1.', cap3:'Premiación 50+ C de la temporada 2025 al atardecer.', cap4:'Rueda a rueda en el desierto: la #732 al frente.', cap5:'La #732 lista en el taller KLIKS, entre trofeos.',
       post_meta:'[Fecha] · [Pista / Ciudad]', post_title:'[Título de la crónica de carrera]',
       post1_p:'Resumen de la fecha: cómo les fue a nuestros pilotos, condiciones de la pista y los ajustes de suspensión que marcaron la diferencia.',
       post2_p:'Resumen de la fecha: resultados, anécdotas del paddock y el trabajo de soporte en pista que hicimos durante el evento.',
@@ -1024,7 +1032,11 @@
       desert_tag:'Mexicali · Baja California · Mexico', desert_h2:'Forged in the desert',
       desert_p:'Sand, rock, dunes and the heat of Baja California capital. There is no easy terrain here — that is why every suspension that leaves KLIKS is tested to handle the toughest Baja off-road.',
       racing_tag:'Racing', racing_h2:'KLIKS Racing blog',
-      racing_intro:'We live racing from the inside. Here we post the report from each round: our riders results, setups that worked, event photos and what we learned on the track.',
+      racing_intro:'We live racing from the inside. Here is the report from our latest round: results, event photos and the work behind every finish.',
+      rf_meta:'WORCS Round 1 · Blythe, CA · Jan 23–25, 2026', rf_title:'We kicked off WORCS 2026 on the podium',
+      rf_body1:'The WORCS season opener ran in the desert sand of Blythe, California. Bike #732, on KLIKS suspension, battled up front all race long and climbed to the top of the podium.',
+      rf_body2:'A strong start to the season, adding to the team 50+ C 2025 record. Thanks to everyone who supports us round after round — this is just the beginning.',
+      cap1:'Bike #732 with KLIKS suspension attacking the Blythe sand.', cap2:'1st place on the WORCS Round 1 podium.', cap3:'50+ C season 2025 award at sunset.', cap4:'Bar to bar in the desert: #732 up front.', cap5:'Bike #732 ready in the KLIKS shop, among the trophies.',
       post_meta:'[Date] · [Track / City]', post_title:'[Race report title]',
       post1_p:'Round recap: how our riders did, track conditions and the suspension adjustments that made the difference.',
       post2_p:'Round recap: results, paddock stories and the trackside support work we did during the event.',
@@ -1124,6 +1136,19 @@
       } catch (err) { status.style.color = '#B3261E'; status.textContent = T[cur].srf_err; }
     });
   });
+
+  // ===== Lightbox de la galería Racing =====
+  (function(){
+    const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
+    if(!lb) return;
+    document.querySelectorAll('.race-gallery img').forEach(img=>{
+      img.addEventListener('click',()=>{ lbImg.src=img.getAttribute('data-full')||img.src; lb.classList.add('open'); });
+    });
+    function closeLb(){ lb.classList.remove('open'); lbImg.src=''; }
+    document.getElementById('lbClose').addEventListener('click',closeLb);
+    lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLb(); });
+  })();
 </script>
 </body>
 </html>
