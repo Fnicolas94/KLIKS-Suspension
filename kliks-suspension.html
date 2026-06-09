@@ -9,32 +9,33 @@
   :root{
     --yellow:#FFD200;
     --yellow-dark:#E6B800;
-    --black:#0D0D0D;
-    --dark:#161616;
-    --dark2:#1F1F1F;
-    --silver:#C9CCD1;
-    --white:#F5F5F5;
+    --black:#15171A;      /* texto principal */
+    --bg:#E9EBEE;         /* fondo silver de la página */
+    --dark:#DDE0E5;       /* secciones alternas (silver más marcado) */
+    --dark2:#FFFFFF;      /* tarjetas blancas */
+    --silver:#565C64;     /* texto secundario */
+    --white:#15171A;      /* texto sobre fondos claros */
     --max:1180px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+  body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:var(--bg);color:var(--black);line-height:1.6}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   h1,h2,h3{font-style:italic;text-transform:uppercase;letter-spacing:.5px;line-height:1.15}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
   .btn{display:inline-block;background:var(--yellow);color:var(--black);font-weight:800;text-transform:uppercase;padding:14px 32px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:.2s;letter-spacing:1px;font-size:.95rem;border:none;cursor:pointer}
-  .btn:hover{background:var(--white)}
-  .btn.ghost{background:transparent;color:var(--yellow);outline:2px solid var(--yellow);outline-offset:-2px}
+  .btn:hover{background:var(--black);color:var(--yellow)}
+  .btn.ghost{background:transparent;color:var(--black);outline:2px solid var(--yellow-dark);outline-offset:-2px}
   .btn.ghost:hover{background:var(--yellow);color:var(--black)}
-  .tag{color:var(--yellow);font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:.8rem}
+  .tag{color:#9A7B00;font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:.8rem}
   section{padding:90px 0}
 
   /* top bar */
   .topbar{background:var(--yellow);color:var(--black);font-weight:700;font-size:.85rem;text-align:center;padding:6px 12px}
 
   /* header */
-  header{position:sticky;top:0;z-index:50;background:rgba(13,13,13,.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow)}
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto}
   .logo{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase}
   .logo span{color:var(--yellow)}
@@ -46,17 +47,19 @@
 
   /* hero */
   .hero{position:relative;min-height:88vh;display:flex;align-items:center;background:
-    linear-gradient(105deg,rgba(13,13,13,.95) 35%,rgba(13,13,13,.6) 70%,rgba(255,210,0,.18)),
-    repeating-linear-gradient(115deg,#141414 0 60px,#101010 60px 120px)}
+    linear-gradient(105deg,rgba(233,235,238,.96) 35%,rgba(233,235,238,.7) 70%,rgba(255,210,0,.25)),
+    repeating-linear-gradient(115deg,#DDE0E5 0 60px,#E6E8EC 60px 120px)}
   .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--yellow) 60%,transparent)}
   .hero .wrap{padding-top:60px;padding-bottom:60px}
   .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);max-width:780px;margin:18px 0}
-  .hero h1 em{color:var(--yellow);font-style:italic}
+  .hero h1 em{color:#9A7B00;font-style:italic}
   .hero p{max-width:620px;color:var(--silver);font-size:1.1rem;margin-bottom:34px}
   .hero .cta{display:flex;gap:16px;flex-wrap:wrap}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
   .hero-art svg{width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.6))}
+  .hero-art img{width:100%;max-width:460px;margin:0 auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,.18))}
   .logo-svg{display:block}
+  .logo-img{height:60px;width:auto}
 
   /* marquee strip */
   .strip{background:var(--yellow);color:var(--black);font-weight:900;text-transform:uppercase;font-style:italic;overflow:hidden;white-space:nowrap;padding:10px 0;font-size:1rem;letter-spacing:2px}
@@ -65,9 +68,9 @@
   /* services */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:26px;margin-top:48px}
   .card{background:var(--dark2);padding:34px 28px;border-top:4px solid var(--yellow);transition:.25s;position:relative}
-  .card:hover{transform:translateY(-6px);background:#262626}
+  .card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
   .card .num{position:absolute;top:14px;right:18px;font-size:2.4rem;font-weight:900;font-style:italic;color:rgba(255,210,0,.18)}
-  .card h3{font-size:1.15rem;margin:14px 0 12px;color:var(--yellow)}
+  .card h3{font-size:1.15rem;margin:14px 0 12px;color:var(--black)}
   .card p{color:var(--silver);font-size:.95rem}
   .card ul{margin:14px 0 0 18px;color:var(--silver);font-size:.9rem}
   .icon{width:54px;height:54px;background:var(--yellow);clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
@@ -75,8 +78,8 @@
   /* process */
   .process{background:var(--dark)}
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:48px;counter-reset:step}
-  .step{padding:26px;background:var(--black);border-left:4px solid var(--yellow)}
-  .step::before{counter-increment:step;content:"0" counter(step);font-size:1.6rem;font-weight:900;font-style:italic;color:var(--yellow)}
+  .step{padding:26px;background:#FFFFFF;border-left:4px solid var(--yellow)}
+  .step::before{counter-increment:step;content:"0" counter(step);font-size:1.6rem;font-weight:900;font-style:italic;color:#9A7B00}
   .step h3{font-size:1rem;margin:10px 0 8px}
   .step p{color:var(--silver);font-size:.9rem}
 
@@ -86,55 +89,55 @@
   .badge-box{background:var(--dark2);padding:40px;border:2px solid var(--yellow);text-align:center}
   .badge-box .big{font-size:3.2rem;font-weight:900;font-style:italic;color:var(--yellow)}
   .badge-box .row{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
-  .badge-box .row div span{font-size:1.8rem;font-weight:900;color:var(--yellow);display:block;font-style:italic}
+  .badge-box .row div span{font-size:1.8rem;font-weight:900;color:#9A7B00;display:block;font-style:italic}
   .badge-box .row div small{color:var(--silver);text-transform:uppercase;letter-spacing:1px;font-size:.7rem}
 
   /* racing blog */
   .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:44px}
   .post{background:var(--dark2);display:flex;flex-direction:column;border-top:4px solid var(--yellow);transition:.25s}
-  .post:hover{transform:translateY(-6px);background:#262626}
-  .post-img{height:170px;background:repeating-linear-gradient(115deg,#1a1a1a 0 40px,#141414 40px 80px);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2rem;color:var(--silver);border-bottom:2px solid var(--yellow)}
+  .post:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+  .post-img{height:170px;background:repeating-linear-gradient(115deg,#D6DADF 0 40px,#DFE2E6 40px 80px);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2rem;color:var(--silver);border-bottom:2px solid var(--yellow)}
   .post-img span{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;margin-top:6px}
   .post-body{padding:24px 24px 28px}
-  .post-meta{color:var(--yellow);font-size:.75rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:10px}
+  .post-meta{color:#9A7B00;font-size:.75rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:10px}
   .post h3{font-size:1.05rem;margin-bottom:10px}
   .post p{color:var(--silver);font-size:.92rem;margin-bottom:14px}
-  .post .more{color:var(--yellow);font-weight:700;text-transform:uppercase;font-size:.8rem;letter-spacing:1px}
-  .post .more:hover{color:var(--white)}
+  .post .more{color:#9A7B00;font-weight:700;text-transform:uppercase;font-size:.8rem;letter-spacing:1px}
+  .post .more:hover{color:var(--black)}
 
   /* testimonials */
   .testi{background:var(--dark)}
   .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:48px}
-  .t-card{background:var(--black);padding:32px;border-bottom:4px solid var(--yellow)}
+  .t-card{background:#FFFFFF;padding:32px;border-bottom:4px solid var(--yellow)}
   .t-card p{color:var(--silver);font-style:italic;margin-bottom:18px}
-  .t-card .who{font-weight:800;text-transform:uppercase;color:var(--yellow);font-size:.9rem;letter-spacing:1px}
+  .t-card .who{font-weight:800;text-transform:uppercase;color:#9A7B00;font-size:.9rem;letter-spacing:1px}
   .t-card .what{font-size:.78rem;color:var(--silver);text-transform:uppercase;letter-spacing:1px}
   .stars{color:var(--yellow);margin-bottom:12px;letter-spacing:3px}
 
   /* contact */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px}
   .c-info div{margin-bottom:22px}
-  .c-info b{color:var(--yellow);text-transform:uppercase;font-size:.8rem;letter-spacing:2px;display:block;margin-bottom:4px}
+  .c-info b{color:#9A7B00;text-transform:uppercase;font-size:.8rem;letter-spacing:2px;display:block;margin-bottom:4px}
   form .field{margin-bottom:16px}
-  input,select,textarea{width:100%;background:var(--dark2);border:1px solid #333;color:var(--white);padding:13px 15px;font-size:.95rem;font-family:inherit}
+  input,select,textarea{width:100%;background:#FFFFFF;border:1px solid #C5C9CE;color:var(--black);padding:13px 15px;font-size:.95rem;font-family:inherit}
   input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
   label{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--silver);display:block;margin-bottom:5px}
 
   /* footer */
   footer{background:var(--dark);border-top:4px solid var(--yellow);padding:50px 0 30px}
   .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
-  footer h4{color:var(--yellow);text-transform:uppercase;font-style:italic;margin-bottom:14px;font-size:1rem}
+  footer h4{color:#9A7B00;text-transform:uppercase;font-style:italic;margin-bottom:14px;font-size:1rem}
   footer ul{list-style:none}
   footer li{margin-bottom:8px}
   footer a:hover{color:var(--yellow)}
   footer p,footer li{color:var(--silver);font-size:.9rem}
   .social{display:flex;gap:14px;margin-top:16px}
-  .social a{width:40px;height:40px;border:2px solid var(--yellow);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--yellow);transition:.2s;font-size:.8rem}
+  .social a{width:40px;height:40px;border:2px solid var(--yellow-dark);display:flex;align-items:center;justify-content:center;font-weight:800;color:#9A7B00;transition:.2s;font-size:.8rem}
   .social a:hover{background:var(--yellow);color:var(--black)}
-  .copy{text-align:center;border-top:1px solid #2a2a2a;padding-top:22px;color:#777;font-size:.8rem}
+  .copy{text-align:center;border-top:1px solid #C5C9CE;padding-top:22px;color:#6B7077;font-size:.8rem}
 
   @media(max-width:860px){
-    nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:var(--black);flex-direction:column;padding:20px;gap:18px;border-bottom:2px solid var(--yellow)}
+    nav ul{display:none;position:absolute;top:100%;left:0;right:0;background:#FFFFFF;flex-direction:column;padding:20px;gap:18px;border-bottom:2px solid var(--yellow)}
     nav ul.open{display:flex}
     .burger{display:block}
     .about,.contact-grid,.hero-grid{grid-template-columns:1fr}
@@ -207,7 +210,10 @@
 
 <header>
   <div class="nav">
-    <a class="logo" href="#inicio" aria-label="KLIKS Suspension"><svg class="logo-svg" viewBox="0 0 430 100" width="206" height="48"><use href="#kliks-lockup"/></svg></a>
+    <a class="logo" href="#inicio" aria-label="KLIKS Suspension">
+      <img class="logo-img" src="logo.png" alt="KLIKS Suspension" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg class="logo-svg" viewBox="0 0 430 100" width="206" height="48" style="display:none"><use href="#kliks-lockup"/></svg>
+    </a>
     <nav>
       <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
       <ul id="menu">
@@ -235,7 +241,8 @@
       </div>
     </div>
     <div class="hero-art">
-      <svg viewBox="0 0 560 330" aria-label="KLIKS Suspension"><use href="#kliks-emblem"/></svg>
+      <img src="logo.png" alt="KLIKS Suspension" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg viewBox="0 0 560 330" aria-label="KLIKS Suspension" style="display:none"><use href="#kliks-emblem"/></svg>
     </div>
   </div>
 </section>
@@ -353,7 +360,8 @@
       <a class="btn" href="#contacto" style="margin-top:10px">Conócenos</a>
     </div>
     <div class="badge-box">
-      <svg viewBox="0 0 560 330" style="width:100%;max-width:340px" aria-label="KLIKS Suspension"><use href="#kliks-emblem"/></svg>
+      <img src="logo.png" alt="KLIKS Suspension" style="width:100%;max-width:300px;margin:0 auto 10px;border-radius:12px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <svg viewBox="0 0 560 330" style="width:100%;max-width:340px;display:none" aria-label="KLIKS Suspension"><use href="#kliks-emblem"/></svg>
       <p style="color:var(--silver);text-transform:uppercase;letter-spacing:2px;font-size:.8rem">Precisión en cada clik</p>
       <div class="row">
         <div><span>+500</span><small>Suspensiones ajustadas</small></div>
@@ -440,7 +448,7 @@
     <div class="contact-grid">
       <div class="c-info">
         <div><b>Teléfono / WhatsApp</b><a href="tel:+526862765484">(686) 276-5484</a></div>
-        <div><b>Correo</b>contacto@klikssuspension.com</div>
+        <div><b>Correo</b><a href="mailto:kliks.suspension@gmail.com">kliks.suspension@gmail.com</a></div>
         <div><b>Dirección</b>Mexicali, Baja California, México</div>
         <div><b>Horario</b>Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00</div>
         <div class="social">
@@ -476,7 +484,8 @@
   <div class="wrap">
     <div class="f-grid">
       <div>
-        <svg viewBox="0 0 430 100" width="180" height="42" aria-label="KLIKS Suspension"><use href="#kliks-lockup"/></svg>
+        <img src="logo.png" alt="KLIKS Suspension" style="height:64px;width:auto;border-radius:8px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <svg viewBox="0 0 430 100" width="180" height="42" aria-label="KLIKS Suspension" style="display:none"><use href="#kliks-lockup"/></svg>
         <p style="margin-top:14px;max-width:340px">Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.</p>
         <p style="margin-top:10px">Mexicali, Baja California, México · <a href="tel:+526862765484" style="color:var(--yellow)">(686) 276-5484</a></p>
       </div>
