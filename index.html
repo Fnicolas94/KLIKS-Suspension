@@ -12,12 +12,12 @@
   :root{
     --yellow:#FFD200;
     --yellow-dark:#E6B800;
-    --black:#15171A;      /* texto principal */
-    --bg:#E9EBEE;         /* fondo silver de la página */
-    --dark:#DDE0E5;       /* secciones alternas (silver más marcado) */
-    --dark2:#FFFFFF;      /* tarjetas blancas */
-    --silver:#565C64;     /* texto secundario */
-    --white:#15171A;      /* texto sobre fondos claros */
+    --black:#15171A;
+    --bg:#E9EBEE;
+    --dark:#DDE0E5;
+    --dark2:#FFFFFF;
+    --silver:#565C64;
+    --white:#15171A;
     --max:1180px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -34,10 +34,8 @@
   .tag{color:#9A7B00;font-weight:700;text-transform:uppercase;letter-spacing:3px;font-size:.8rem}
   section{padding:90px 0}
 
-  /* top bar */
   .topbar{background:var(--yellow);color:var(--black);font-weight:700;font-size:.85rem;text-align:center;padding:6px 12px}
 
-  /* header */
   header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:2px solid var(--yellow)}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto}
   .logo{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase}
@@ -47,8 +45,10 @@
   nav a{font-weight:600;text-transform:uppercase;font-size:.85rem;letter-spacing:1px;padding:6px 0;border-bottom:2px solid transparent;transition:.2s}
   nav a:hover{color:var(--yellow);border-color:var(--yellow)}
   .burger{display:none;background:none;border:none;color:var(--yellow);font-size:1.8rem;cursor:pointer}
+  .lang-toggle{background:transparent;border:2px solid var(--yellow-dark);color:#9A7B00;font-weight:800;text-transform:uppercase;font-size:.8rem;letter-spacing:1px;padding:6px 12px;cursor:pointer;font-family:inherit;transition:.2s}
+  .lang-toggle:hover{background:var(--yellow);color:var(--black)}
+  .lang-toggle::before{content:"\1F310 \00a0"}
 
-  /* hero */
   .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:
     linear-gradient(100deg,rgba(10,10,13,.92) 25%,rgba(10,10,13,.55) 60%,rgba(255,210,0,.12)),
     url('https://images.unsplash.com/photo-1628996796796-bcd82e0899d4?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat}
@@ -65,11 +65,9 @@
   .logo-svg{display:block}
   .logo-img{height:60px;width:auto}
 
-  /* marquee strip */
   .strip{background:var(--yellow);color:var(--black);font-weight:900;text-transform:uppercase;font-style:italic;overflow:hidden;white-space:nowrap;padding:10px 0;font-size:1rem;letter-spacing:2px}
   .strip span{display:inline-block;padding:0 30px}
 
-  /* services */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:26px;margin-top:48px}
   .card{background:var(--dark2);padding:0;border-top:4px solid var(--yellow);transition:.25s;position:relative;overflow:hidden}
   .card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(0,0,0,.18)}
@@ -83,7 +81,6 @@
   .card p{color:var(--silver);font-size:1rem}
   .card ul{margin:14px 0 0 18px;color:var(--silver);font-size:.95rem}
 
-  /* process */
   .process{background:var(--dark)}
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:48px;counter-reset:step}
   .step{padding:26px;background:#FFFFFF;border-left:4px solid var(--yellow)}
@@ -91,7 +88,6 @@
   .step h3{font-size:1rem;margin:10px 0 8px}
   .step p{color:var(--silver);font-size:.9rem}
 
-  /* about */
   .about{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
   .about p{color:var(--silver);margin-bottom:18px}
   .badge-box{background:var(--dark2);padding:40px;border:2px solid var(--yellow);text-align:center}
@@ -100,13 +96,11 @@
   .badge-box .row div span{font-size:1.8rem;font-weight:900;color:#9A7B00;display:block;font-style:italic}
   .badge-box .row div small{color:var(--silver);text-transform:uppercase;letter-spacing:1px;font-size:.7rem}
 
-  /* desierto / mexicali */
   .desert{background:linear-gradient(rgba(14,11,7,.62),rgba(14,11,7,.72)),url('https://images.unsplash.com/photo-1612599537672-64c5f1869280?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;text-align:center;padding:130px 0;border-top:6px solid var(--yellow);border-bottom:6px solid var(--yellow)}
   .desert .tag{color:var(--yellow)}
   .desert h2{color:#FFFFFF;font-size:clamp(1.8rem,4vw,3rem);margin-top:12px;text-shadow:0 4px 18px rgba(0,0,0,.6)}
   .desert p{color:#EFE9DD;max-width:680px;margin:18px auto 0;font-size:1.15rem;text-shadow:0 2px 8px rgba(0,0,0,.5)}
 
-  /* racing blog */
   #racing{background:linear-gradient(rgba(10,10,13,.88),rgba(10,10,13,.92)),url('https://images.unsplash.com/photo-1557396975-70d7485408de?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat}
   #racing h2{color:#FFFFFF}
   #racing .tag{color:var(--yellow)}
@@ -125,7 +119,6 @@
   .post .more{color:#9A7B00;font-weight:700;text-transform:uppercase;font-size:.8rem;letter-spacing:1px}
   .post .more:hover{color:var(--black)}
 
-  /* testimonials */
   .testi{background:var(--dark)}
   .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:48px}
   .t-card{background:#FFFFFF;padding:32px;border-bottom:4px solid var(--yellow)}
@@ -134,7 +127,6 @@
   .t-card .what{font-size:.78rem;color:var(--silver);text-transform:uppercase;letter-spacing:1px}
   .stars{color:var(--yellow);margin-bottom:12px;letter-spacing:3px}
 
-  /* contact */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:48px}
   .c-info div{margin-bottom:22px}
   .c-info b{color:#9A7B00;text-transform:uppercase;font-size:.8rem;letter-spacing:2px;display:block;margin-bottom:4px}
@@ -143,7 +135,45 @@
   input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
   label{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--silver);display:block;margin-bottom:5px}
 
-  /* footer */
+  /* ===== Solicitud de servicio detallada ===== */
+  .srf-tabs{display:flex;gap:8px;margin:40px 0 0;flex-wrap:wrap}
+  .srf-tab{flex:1;min-width:200px;background:var(--dark2);border:2px solid #C5C9CE;color:var(--silver);font-family:'Archivo Black',Impact,sans-serif;font-style:italic;text-transform:uppercase;letter-spacing:1px;font-size:1.05rem;padding:18px 20px;cursor:pointer;transition:.2s;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+  .srf-tab small{display:block;font-family:'Barlow Condensed',sans-serif;font-style:normal;font-weight:600;font-size:.72rem;letter-spacing:1px;color:var(--silver);margin-top:2px}
+  .srf-tab:hover{border-color:var(--yellow-dark)}
+  .srf-tab.active{background:var(--black);color:var(--yellow);border-color:var(--black)}
+  .srf-tab.active small{color:#C9CDD3}
+  .srf-panel{display:none;background:var(--dark2);border:2px solid #D4D8DD;border-top:4px solid var(--yellow);padding:32px;margin-top:0}
+  .srf-panel.active{display:block;animation:srffade .25s ease}
+  @keyframes srffade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .srf-block{margin-bottom:30px}
+  .srf-block > h4{font-family:'Archivo Black',Impact,sans-serif;font-style:italic;text-transform:uppercase;color:var(--black);font-size:1.15rem;border-bottom:2px solid var(--yellow);padding-bottom:8px;margin-bottom:18px;letter-spacing:.5px}
+  .srf-grid{display:grid;gap:14px 18px}
+  .srf-grid.cols-2{grid-template-columns:1fr 1fr}
+  .srf-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+  .srf-grid.cols-4{grid-template-columns:repeat(4,1fr)}
+  .srf-grid .field{margin-bottom:0}
+  .srf-services{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px}
+  .srf-srv-col h5{font-family:'Archivo Black',Impact,sans-serif;font-style:italic;text-transform:uppercase;color:#9A7B00;font-size:.95rem;margin:6px 0 12px;letter-spacing:.5px}
+  .srf-opt{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed #D4D8DD}
+  .srf-opt > span{font-weight:600;font-size:.92rem;color:var(--black)}
+  .srf-opt > span em{display:block;font-style:normal;font-weight:500;font-size:.72rem;color:var(--silver);text-transform:none;letter-spacing:0}
+  .srf-choices{display:flex;gap:5px;flex-shrink:0}
+  .srf-choices label{margin:0;cursor:pointer;letter-spacing:0}
+  .srf-choices input{position:absolute;opacity:0;width:0;height:0}
+  .srf-choices label span{display:inline-block;padding:6px 11px;border:1px solid #C5C9CE;background:#fff;font-size:.72rem;font-weight:700;color:var(--silver);transition:.15s;min-width:44px;text-align:center;text-transform:uppercase}
+  .srf-choices input:checked + span{background:var(--yellow);border-color:var(--yellow-dark);color:var(--black)}
+  .srf-choices label:hover span{border-color:var(--yellow-dark)}
+  .srf-mm{width:70px !important;display:inline-block;padding:5px 8px;font-size:.85rem}
+  .srf-inline{display:flex;align-items:center;gap:8px;font-weight:600;color:var(--black);font-size:.9rem}
+  .srf-note{background:#FFF8DB;border:1px solid var(--yellow-dark);padding:14px 16px;font-size:.85rem;color:#5b4b00;margin-bottom:22px;line-height:1.5}
+  .srf-legal{font-size:.74rem;color:var(--silver);line-height:1.5;margin:18px 0}
+  .srf-submit-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:10px}
+  @media(max-width:760px){
+    .srf-grid.cols-2,.srf-grid.cols-3,.srf-grid.cols-4{grid-template-columns:1fr}
+    .srf-services{grid-template-columns:1fr}
+    .srf-panel{padding:22px 16px}
+  }
+
   footer{background:var(--dark);border-top:4px solid var(--yellow);padding:50px 0 30px}
   .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
   footer h4{color:#9A7B00;text-transform:uppercase;font-style:italic;margin-bottom:14px;font-size:1rem}
@@ -184,8 +214,6 @@
       <stop offset="1" stop-color="#4A4A4A"/>
     </linearGradient>
   </defs>
-
-  <!-- Amortiguador -->
   <symbol id="kliks-shock" viewBox="0 0 120 220">
     <circle cx="60" cy="18" r="16" fill="#3A3A3A" stroke="#C9CCD1" stroke-width="3"/>
     <circle cx="60" cy="18" r="7" fill="#111"/>
@@ -198,8 +226,6 @@
     <circle cx="60" cy="198" r="14" fill="#3A3A3A" stroke="#C9CCD1" stroke-width="3"/>
     <circle cx="60" cy="198" r="6" fill="#111"/>
   </symbol>
-
-  <!-- Lockup horizontal (header / footer) -->
   <symbol id="kliks-lockup" viewBox="0 0 430 100">
     <polygon points="300,14 426,4 418,17 318,27" fill="#FFD200"/>
     <polygon points="316,32 408,25 402,35 330,41" fill="#C9CCD1"/>
@@ -207,8 +233,6 @@
     <text x="58" y="56" font-family="'Arial Black',Arial,sans-serif" font-style="italic" font-weight="900" font-size="50" fill="url(#kliks-chrome)" stroke="#0D0D0D" stroke-width="1.5">KLIKS</text>
     <text x="62" y="84" font-family="Arial,sans-serif" font-style="italic" font-weight="800" font-size="18" letter-spacing="5" fill="#FFD200">SUSPENSION</text>
   </symbol>
-
-  <!-- Emblema completo (hero / nosotros) -->
   <symbol id="kliks-emblem" viewBox="0 0 560 330">
     <polygon points="150,52 548,22 530,44 225,72" fill="#FFD200"/>
     <polygon points="200,84 470,64 458,78 240,96" fill="#C9CCD1"/>
@@ -226,7 +250,7 @@
   </symbol>
 </svg>
 
-<div class="topbar">⚡ Agenda tu servicio hoy — Llámanos: <a href="tel:+526862765484" style="color:inherit;font-weight:800">(686) 276-5484</a> · Mexicali, B.C.</div>
+<div class="topbar" data-i18n-html="topbar">⚡ Agenda tu servicio hoy — Llámanos: <a href="tel:+526862765484" style="color:inherit;font-weight:800">(686) 276-5484</a> · Mexicali, B.C.</div>
 
 <header>
   <div class="nav">
@@ -237,13 +261,14 @@
     <nav>
       <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
       <ul id="menu">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#proceso">Proceso</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#racing">Racing</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#contacto" class="btn" style="padding:10px 22px">Contacto</a></li>
+        <li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+        <li><a href="#proceso" data-i18n="nav_process">Proceso</a></li>
+        <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+        <li><a href="#racing" data-i18n="nav_racing">Racing</a></li>
+        <li><a href="#testimonios" data-i18n="nav_reviews">Testimonios</a></li>
+        <li><a href="#contacto" class="btn" style="padding:10px 22px" data-i18n="nav_contact">Contacto</a></li>
+        <li><button class="lang-toggle" id="langBtn" type="button" aria-label="Switch language">EN</button></li>
       </ul>
     </nav>
   </div>
@@ -252,12 +277,12 @@
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     <div>
-      <span class="tag">Taller especializado en motocross y off-road</span>
-      <h1>Tu suspensión, ajustada a <em>tu forma de rodar</em></h1>
-      <p>En KLIKS Suspension afinamos cada clik de tu moto: suspensión, motor y preparación completa. Más tracción, más control y más confianza en cada vuelta, sin importar el terreno.</p>
+      <span class="tag" data-i18n="hero_tag">Taller especializado en motocross y off-road</span>
+      <h1 data-i18n-html="hero_h1">Tu suspensión, ajustada a <em>tu forma de rodar</em></h1>
+      <p data-i18n="hero_p">En KLIKS Suspension afinamos cada clik de tu moto: suspensión, motor y preparación completa. Más tracción, más control y más confianza en cada vuelta, sin importar el terreno.</p>
       <div class="cta">
-        <a class="btn" href="#contacto">Agendar Servicio</a>
-        <a class="btn ghost" href="#servicios" style="color:#fff;outline-color:var(--yellow)">Ver Servicios</a>
+        <a class="btn" href="#contacto" data-i18n="hero_cta1">Agendar Servicio</a>
+        <a class="btn ghost" href="#servicios" style="color:#fff;outline-color:var(--yellow)" data-i18n="hero_cta2">Ver Servicios</a>
       </div>
     </div>
     <div class="hero-art">
@@ -267,23 +292,23 @@
   </div>
 </section>
 
-<div class="strip"><span>Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽ Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽</span></div>
+<div class="strip"><span data-i18n="strip">Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽ Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽</span></div>
 
 <section id="servicios">
   <div class="wrap">
-    <span class="tag">Lo que hacemos</span>
-    <h2 style="font-size:2.2rem;margin-top:10px">Servicios pensados para mejorar tu rodada</h2>
+    <span class="tag" data-i18n="serv_tag">Lo que hacemos</span>
+    <h2 style="font-size:2.2rem;margin-top:10px" data-i18n="serv_h2">Servicios pensados para mejorar tu rodada</h2>
     <div class="grid">
       <div class="card">
         <span class="num">01</span>
         <div class="card-img"><img src="https://images.unsplash.com/photo-1636761358756-ef34b4ef036a?q=80&w=800&auto=format&fit=crop" alt="Trabajo de precisión en suspensión" loading="lazy"></div>
         <div class="card-body">
-          <h3>Revalve de Suspensión</h3>
-          <p>Modificamos internamente tu horquilla y amortiguador según tu peso, nivel y tipo de terreno. Setup personalizado, no genérico.</p>
+          <h3 data-i18n="card1_h3">Revalve de Suspensión</h3>
+          <p data-i18n="card1_p">Modificamos internamente tu horquilla y amortiguador según tu peso, nivel y tipo de terreno. Setup personalizado, no genérico.</p>
           <ul>
-            <li>Perfil de piloto personalizado</li>
-            <li>Pistones y shims a la medida</li>
-            <li>Pruebas y ajuste fino</li>
+            <li data-i18n="card1_li1">Perfil de piloto personalizado</li>
+            <li data-i18n="card1_li2">Pistones y shims a la medida</li>
+            <li data-i18n="card1_li3">Pruebas y ajuste fino</li>
           </ul>
         </div>
       </div>
@@ -291,12 +316,12 @@
         <span class="num">02</span>
         <div class="card-img"><img src="https://images.unsplash.com/photo-1636761358757-0a616eb9e17e?q=80&w=800&auto=format&fit=crop" alt="Mecánico dando servicio a una moto" loading="lazy"></div>
         <div class="card-body">
-          <h3>Servicio de Suspensión</h3>
-          <p>Mantenimiento completo: cambio de aceite, sellos, bujes e inspección de componentes para que tu suspensión trabaje como nueva.</p>
+          <h3 data-i18n="card2_h3">Servicio de Suspensión</h3>
+          <p data-i18n="card2_p">Mantenimiento completo: cambio de aceite, sellos, bujes e inspección de componentes para que tu suspensión trabaje como nueva.</p>
           <ul>
-            <li>Cambio de sellos y aceite</li>
-            <li>Inspección de barras y botellas</li>
-            <li>Ajuste de SAG y precarga</li>
+            <li data-i18n="card2_li1">Cambio de sellos y aceite</li>
+            <li data-i18n="card2_li2">Inspección de barras y botellas</li>
+            <li data-i18n="card2_li3">Ajuste de SAG y precarga</li>
           </ul>
         </div>
       </div>
@@ -304,12 +329,12 @@
         <span class="num">03</span>
         <div class="card-img"><img src="https://images.unsplash.com/photo-1630949821332-3beae5adc9e2?q=80&w=800&auto=format&fit=crop" alt="Moto de motocross en el desierto" loading="lazy"></div>
         <div class="card-body">
-          <h3>Resortes y Kits</h3>
-          <p>Conversión de resortes, kits para horquilla y ajuste de altura (ride height) según tu peso y estilo de manejo.</p>
+          <h3 data-i18n="card3_h3">Resortes y Kits</h3>
+          <p data-i18n="card3_p">Conversión de resortes, kits para horquilla y ajuste de altura (ride height) según tu peso y estilo de manejo.</p>
           <ul>
-            <li>Kit de conversión de resortes</li>
-            <li>Kits para horquilla</li>
-            <li>Modificación de altura</li>
+            <li data-i18n="card3_li1">Kit de conversión de resortes</li>
+            <li data-i18n="card3_li2">Kits para horquilla</li>
+            <li data-i18n="card3_li3">Modificación de altura</li>
           </ul>
         </div>
       </div>
@@ -317,12 +342,12 @@
         <span class="num">04</span>
         <div class="card-img"><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?q=80&w=800&auto=format&fit=crop" alt="Motor de motocicleta en reconstrucción" loading="lazy"></div>
         <div class="card-body">
-          <h3>Servicio de Motor</h3>
-          <p>Reconstrucción y modificación de motor con piezas OEM o aftermarket, buscando el balance ideal entre potencia y durabilidad.</p>
+          <h3 data-i18n="card4_h3">Servicio de Motor</h3>
+          <p data-i18n="card4_p">Reconstrucción y modificación de motor con piezas OEM o aftermarket, buscando el balance ideal entre potencia y durabilidad.</p>
           <ul>
-            <li>Top-end y bottom-end</li>
-            <li>Mejoras de rendimiento</li>
-            <li>Diagnóstico completo</li>
+            <li data-i18n="card4_li1">Top-end y bottom-end</li>
+            <li data-i18n="card4_li2">Mejoras de rendimiento</li>
+            <li data-i18n="card4_li3">Diagnóstico completo</li>
           </ul>
         </div>
       </div>
@@ -330,12 +355,12 @@
         <span class="num">05</span>
         <div class="card-img"><img src="https://images.unsplash.com/photo-1604260324056-45f7c778754a?q=80&w=800&auto=format&fit=crop" alt="Moto en preparación dentro del taller" loading="lazy"></div>
         <div class="card-body">
-          <h3>Bike Build Completo</h3>
-          <p>Preparación total de tu moto desde el chasis: combinamos suspensión, motor y mantenimiento para entregarla lista para competir.</p>
+          <h3 data-i18n="card5_h3">Bike Build Completo</h3>
+          <p data-i18n="card5_p">Preparación total de tu moto desde el chasis: combinamos suspensión, motor y mantenimiento para entregarla lista para competir.</p>
           <ul>
-            <li>Reconstrucción integral</li>
-            <li>Preparación pre-carrera</li>
-            <li>Mantenimiento programado</li>
+            <li data-i18n="card5_li1">Reconstrucción integral</li>
+            <li data-i18n="card5_li2">Preparación pre-carrera</li>
+            <li data-i18n="card5_li3">Mantenimiento programado</li>
           </ul>
         </div>
       </div>
@@ -343,12 +368,12 @@
         <span class="num">06</span>
         <div class="card-img"><img src="https://images.unsplash.com/photo-1692276597759-c05ca7e0c3c5?q=80&w=800&auto=format&fit=crop" alt="Pilotos compitiendo en pista de motocross" loading="lazy"></div>
         <div class="card-body">
-          <h3>Soporte en Pista</h3>
-          <p>Te acompañamos en carreras y eventos seleccionados con ajustes de suspensión y asistencia técnica directamente en la pista.</p>
+          <h3 data-i18n="card6_h3">Soporte en Pista</h3>
+          <p data-i18n="card6_p">Te acompañamos en carreras y eventos seleccionados con ajustes de suspensión y asistencia técnica directamente en la pista.</p>
           <ul>
-            <li>Ajustes el día del evento</li>
-            <li>Asesoría de setup</li>
-            <li>Atención a pilotos y equipos</li>
+            <li data-i18n="card6_li1">Ajustes el día del evento</li>
+            <li data-i18n="card6_li2">Asesoría de setup</li>
+            <li data-i18n="card6_li3">Atención a pilotos y equipos</li>
           </ul>
         </div>
       </div>
@@ -358,24 +383,24 @@
 
 <section class="process" id="proceso">
   <div class="wrap">
-    <span class="tag">Cómo trabajamos</span>
-    <h2 style="font-size:2.2rem;margin-top:10px">De tu garage a la pista en 4 pasos</h2>
+    <span class="tag" data-i18n="proc_tag">Cómo trabajamos</span>
+    <h2 style="font-size:2.2rem;margin-top:10px" data-i18n="proc_h2">De tu garage a la pista en 4 pasos</h2>
     <div class="steps">
       <div class="step">
-        <h3>Cuéntanos de ti</h3>
-        <p>Llenas tu perfil de piloto: peso, nivel, terreno y qué sientes que le falta a tu moto.</p>
+        <h3 data-i18n="step1_h3">Cuéntanos de ti</h3>
+        <p data-i18n="step1_p">Llenas tu perfil de piloto: peso, nivel, terreno y qué sientes que le falta a tu moto.</p>
       </div>
       <div class="step">
-        <h3>Diagnóstico</h3>
-        <p>Recibimos tu suspensión o tu moto, la desarmamos e inspeccionamos cada componente.</p>
+        <h3 data-i18n="step2_h3">Diagnóstico</h3>
+        <p data-i18n="step2_p">Recibimos tu suspensión o tu moto, la desarmamos e inspeccionamos cada componente.</p>
       </div>
       <div class="step">
-        <h3>Trabajo a la medida</h3>
-        <p>Ejecutamos el servicio o revalve con especificaciones calculadas para tu caso, no plantillas.</p>
+        <h3 data-i18n="step3_h3">Trabajo a la medida</h3>
+        <p data-i18n="step3_p">Ejecutamos el servicio o revalve con especificaciones calculadas para tu caso, no plantillas.</p>
       </div>
       <div class="step">
-        <h3>Entrega y seguimiento</h3>
-        <p>Te entregamos con setup recomendado y damos seguimiento para afinar cliks después de rodar.</p>
+        <h3 data-i18n="step4_h3">Entrega y seguimiento</h3>
+        <p data-i18n="step4_p">Te entregamos con setup recomendado y damos seguimiento para afinar cliks después de rodar.</p>
       </div>
     </div>
   </div>
@@ -384,22 +409,22 @@
 <section id="nosotros">
   <div class="wrap about">
     <div>
-      <span class="tag">Nosotros</span>
-      <h2 style="font-size:2.2rem;margin:10px 0 24px">La diferencia está en los cliks</h2>
-      <p>KLIKS Suspension nace de la pasión por el off-road y de una idea simple: la mejor moto no es la más cara, es la que está ajustada a su piloto. Por eso cada trabajo que sale de nuestro taller lleva un setup pensado para una sola persona: tú.</p>
-      <p>No vendemos lo que no necesitas. Si tu suspensión solo requiere servicio, te lo decimos. Si tu estilo pide un revalve, te explicamos por qué. Nuestra meta es que tu siguiente rodada sea la mejor que has tenido.</p>
-      <p>Trabajamos con todas las marcas y modelos de motocross, enduro y off-road.</p>
-      <a class="btn" href="#contacto" style="margin-top:10px">Conócenos</a>
+      <span class="tag" data-i18n="about_tag">Nosotros</span>
+      <h2 style="font-size:2.2rem;margin:10px 0 24px" data-i18n="about_h2">La diferencia está en los cliks</h2>
+      <p data-i18n="about_p1">KLIKS Suspension nace de la pasión por el off-road y de una idea simple: la mejor moto no es la más cara, es la que está ajustada a su piloto. Por eso cada trabajo que sale de nuestro taller lleva un setup pensado para una sola persona: tú.</p>
+      <p data-i18n="about_p2">No vendemos lo que no necesitas. Si tu suspensión solo requiere servicio, te lo decimos. Si tu estilo pide un revalve, te explicamos por qué. Nuestra meta es que tu siguiente rodada sea la mejor que has tenido.</p>
+      <p data-i18n="about_p3">Trabajamos con todas las marcas y modelos de motocross, enduro y off-road.</p>
+      <a class="btn" href="#contacto" style="margin-top:10px" data-i18n="about_btn">Conócenos</a>
     </div>
     <div class="badge-box">
       <img src="logo.png" alt="KLIKS Suspension" style="width:100%;max-width:300px;margin:0 auto 10px;border-radius:12px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <svg viewBox="0 0 560 330" style="width:100%;max-width:340px;display:none" aria-label="KLIKS Suspension"><use href="#kliks-emblem"/></svg>
-      <p style="color:var(--silver);text-transform:uppercase;letter-spacing:2px;font-size:.8rem">Precisión en cada clik</p>
+      <p style="color:var(--silver);text-transform:uppercase;letter-spacing:2px;font-size:.8rem" data-i18n="badge_label">Precisión en cada clik</p>
       <div class="row">
-        <div><span>+500</span><small>Suspensiones ajustadas</small></div>
-        <div><span>100%</span><small>Setup personalizado</small></div>
-        <div><span>MX</span><small>Enduro / Off-Road</small></div>
-        <div><span>★★★★★</span><small>Pilotos satisfechos</small></div>
+        <div><span>+500</span><small data-i18n="badge1">Suspensiones ajustadas</small></div>
+        <div><span>100%</span><small data-i18n="badge2">Setup personalizado</small></div>
+        <div><span>MX</span><small data-i18n="badge3">Enduro / Off-Road</small></div>
+        <div><span>★★★★★</span><small data-i18n="badge4">Pilotos satisfechos</small></div>
       </div>
     </div>
   </div>
@@ -407,75 +432,75 @@
 
 <section class="desert">
   <div class="wrap">
-    <span class="tag">Mexicali · Baja California · México</span>
-    <h2>Forjados en el desierto</h2>
-    <p>Arena, piedra, dunas y el calor de la capital de Baja California. Aquí no hay terreno fácil — por eso cada suspensión que sale de KLIKS está probada para aguantar lo más duro del off-road bajacaliforniano.</p>
+    <span class="tag" data-i18n="desert_tag">Mexicali · Baja California · México</span>
+    <h2 data-i18n="desert_h2">Forjados en el desierto</h2>
+    <p data-i18n="desert_p">Arena, piedra, dunas y el calor de la capital de Baja California. Aquí no hay terreno fácil — por eso cada suspensión que sale de KLIKS está probada para aguantar lo más duro del off-road bajacaliforniano.</p>
   </div>
 </section>
 
 <section id="racing">
   <div class="wrap">
-    <span class="tag">Racing</span>
-    <h2 style="font-size:2.2rem;margin-top:10px">Blog de carreras KLIKS Racing</h2>
-    <p class="intro" style="max-width:680px;margin-top:14px">Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.</p>
+    <span class="tag" data-i18n="racing_tag">Racing</span>
+    <h2 style="font-size:2.2rem;margin-top:10px" data-i18n="racing_h2">Blog de carreras KLIKS Racing</h2>
+    <p class="intro" style="max-width:680px;margin-top:14px" data-i18n="racing_intro">Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.</p>
     <div class="blog-grid">
       <article class="post">
         <div class="post-img"><img src="https://images.unsplash.com/photo-1542550546-88afdd84b64f?q=80&w=800&auto=format&fit=crop" alt="Piloto de motocross en salto" loading="lazy"></div>
         <div class="post-body">
-          <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
-          <h3>[Título de la crónica de carrera]</h3>
-          <p>Resumen de la fecha: cómo les fue a nuestros pilotos, condiciones de la pista y los ajustes de suspensión que marcaron la diferencia.</p>
-          <a class="more" href="#">Leer crónica completa →</a>
+          <div class="post-meta" data-i18n="post_meta">[Fecha] · [Pista / Ciudad]</div>
+          <h3 data-i18n="post_title">[Título de la crónica de carrera]</h3>
+          <p data-i18n="post1_p">Resumen de la fecha: cómo les fue a nuestros pilotos, condiciones de la pista y los ajustes de suspensión que marcaron la diferencia.</p>
+          <a class="more" href="#" data-i18n="post_more">Leer crónica completa →</a>
         </div>
       </article>
       <article class="post">
         <div class="post-img"><img src="https://images.unsplash.com/photo-1596493505147-8fbb92e394e8?q=80&w=800&auto=format&fit=crop" alt="Piloto de motocross en competencia" loading="lazy"></div>
         <div class="post-body">
-          <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
-          <h3>[Título de la crónica de carrera]</h3>
-          <p>Resumen de la fecha: resultados, anécdotas del paddock y el trabajo de soporte en pista que hicimos durante el evento.</p>
-          <a class="more" href="#">Leer crónica completa →</a>
+          <div class="post-meta" data-i18n="post_meta">[Fecha] · [Pista / Ciudad]</div>
+          <h3 data-i18n="post_title">[Título de la crónica de carrera]</h3>
+          <p data-i18n="post2_p">Resumen de la fecha: resultados, anécdotas del paddock y el trabajo de soporte en pista que hicimos durante el evento.</p>
+          <a class="more" href="#" data-i18n="post_more">Leer crónica completa →</a>
         </div>
       </article>
       <article class="post">
         <div class="post-img"><img src="https://images.unsplash.com/photo-1445605081472-9788fb3bc02f?q=80&w=800&auto=format&fit=crop" alt="Salto de motocross en plena carrera" loading="lazy"></div>
         <div class="post-body">
-          <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
-          <h3>[Título de la crónica de carrera]</h3>
-          <p>Resumen de la fecha: análisis del terreno, setup recomendado para esa pista y próximas fechas del calendario.</p>
-          <a class="more" href="#">Leer crónica completa →</a>
+          <div class="post-meta" data-i18n="post_meta">[Fecha] · [Pista / Ciudad]</div>
+          <h3 data-i18n="post_title">[Título de la crónica de carrera]</h3>
+          <p data-i18n="post3_p">Resumen de la fecha: análisis del terreno, setup recomendado para esa pista y próximas fechas del calendario.</p>
+          <a class="more" href="#" data-i18n="post_more">Leer crónica completa →</a>
         </div>
       </article>
     </div>
     <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap">
-      <a class="btn" href="#">Ver todas las crónicas</a>
-      <a class="btn ghost" href="#contacto">¿Corres? Pide soporte en pista</a>
+      <a class="btn" href="#" data-i18n="racing_btn1">Ver todas las crónicas</a>
+      <a class="btn ghost" href="#contacto" data-i18n="racing_btn2">¿Corres? Pide soporte en pista</a>
     </div>
   </div>
 </section>
 
 <section class="testi" id="testimonios">
   <div class="wrap">
-    <span class="tag">Testimonios</span>
-    <h2 style="font-size:2.2rem;margin-top:10px">Lo que dicen nuestros pilotos</h2>
+    <span class="tag" data-i18n="testi_tag">Testimonios</span>
+    <h2 style="font-size:2.2rem;margin-top:10px" data-i18n="testi_h2">Lo que dicen nuestros pilotos</h2>
     <div class="t-grid">
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <p>"Después del revalve la moto absorbe todo. Recuperé la confianza en las frenadas con braking bumps y ya no me escupe en los cuadrados."</p>
-        <div class="who">[Nombre del piloto]</div>
-        <div class="what">Motocross — Intermedio</div>
+        <p data-i18n="t1_p">"Después del revalve la moto absorbe todo. Recuperé la confianza en las frenadas con braking bumps y ya no me escupe en los cuadrados."</p>
+        <div class="who" data-i18n="who_ph">[Nombre del piloto]</div>
+        <div class="what" data-i18n="t1_what">Motocross — Intermedio</div>
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <p>"Me explicaron todo el proceso y el porqué de cada ajuste. Se nota que ajustan para tu peso y estilo, no un setup genérico."</p>
-        <div class="who">[Nombre del piloto]</div>
-        <div class="what">Enduro — Amateur</div>
+        <p data-i18n="t2_p">"Me explicaron todo el proceso y el porqué de cada ajuste. Se nota que ajustan para tu peso y estilo, no un setup genérico."</p>
+        <div class="who" data-i18n="who_ph">[Nombre del piloto]</div>
+        <div class="what" data-i18n="t2_what">Enduro — Amateur</div>
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <p>"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó perfecta."</p>
-        <div class="who">[Nombre del piloto]</div>
-        <div class="what">Off-Road — Experto</div>
+        <p data-i18n="t3_p">"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó perfecta."</p>
+        <div class="who" data-i18n="who_ph">[Nombre del piloto]</div>
+        <div class="what" data-i18n="t3_what">Off-Road — Experto</div>
       </div>
     </div>
   </div>
@@ -483,14 +508,14 @@
 
 <section id="contacto">
   <div class="wrap">
-    <span class="tag">Contacto</span>
-    <h2 style="font-size:2.2rem;margin-top:10px">Agenda tu servicio</h2>
+    <span class="tag" data-i18n="contact_tag">Contacto</span>
+    <h2 style="font-size:2.2rem;margin-top:10px" data-i18n="contact_h2">Agenda tu servicio</h2>
     <div class="contact-grid">
       <div class="c-info">
-        <div><b>Teléfono / WhatsApp</b><a href="tel:+526862765484">(686) 276-5484</a></div>
-        <div><b>Correo</b><a href="mailto:kliks.suspension@gmail.com">kliks.suspension@gmail.com</a></div>
-        <div><b>Dirección</b>Mexicali, Baja California, México</div>
-        <div><b>Horario</b>Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00</div>
+        <div><b data-i18n="ci_phone">Teléfono / WhatsApp</b><a href="tel:+526862765484">(686) 276-5484</a></div>
+        <div><b data-i18n="ci_email">Correo</b><a href="mailto:kliks.suspension@gmail.com">kliks.suspension@gmail.com</a></div>
+        <div><b data-i18n="ci_addr">Dirección</b><span data-i18n="ci_addr_val">Mexicali, Baja California, México</span></div>
+        <div><b data-i18n="ci_hours">Horario</b><span data-i18n="ci_hours_val">Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00</span></div>
         <div class="social">
           <a href="#" aria-label="Facebook">FB</a>
           <a href="#" aria-label="Instagram">IG</a>
@@ -500,24 +525,370 @@
       </div>
       <form id="contact-form" action="https://formspree.io/f/xzdqgnka" method="POST">
         <input type="hidden" name="_subject" value="Nueva solicitud de servicio — klikssuspension">
-        <div class="field"><label>Nombre</label><input type="text" name="nombre" required placeholder="Tu nombre"></div>
-        <div class="field"><label>Teléfono o correo</label><input type="text" name="contacto" required placeholder="¿Cómo te contactamos?"></div>
-        <div class="field"><label>Moto (marca / modelo / año)</label><input type="text" name="moto" placeholder="Ej. KTM 250 SX-F 2023"></div>
-        <div class="field"><label>Servicio</label>
+        <div class="field"><label data-i18n="qf_name">Nombre</label><input type="text" name="nombre" required placeholder="Tu nombre" data-i18n-ph="qf_name_ph"></div>
+        <div class="field"><label data-i18n="qf_contact">Teléfono o correo</label><input type="text" name="contacto" required placeholder="¿Cómo te contactamos?" data-i18n-ph="qf_contact_ph"></div>
+        <div class="field"><label data-i18n="qf_bike">Moto (marca / modelo / año)</label><input type="text" name="moto" placeholder="Ej. KTM 250 SX-F 2023" data-i18n-ph="qf_bike_ph"></div>
+        <div class="field"><label data-i18n="qf_service">Servicio</label>
           <select name="servicio">
-            <option>Revalve de suspensión</option>
-            <option>Servicio de suspensión</option>
-            <option>Resortes / kits / ride height</option>
-            <option>Servicio de motor</option>
-            <option>Bike build completo</option>
-            <option>Soporte en pista</option>
-            <option>Otro</option>
+            <option value="Revalve de suspensión" data-i18n="qf_o1">Revalve de suspensión</option>
+            <option value="Servicio de suspensión" data-i18n="qf_o2">Servicio de suspensión</option>
+            <option value="Resortes / kits / ride height" data-i18n="qf_o3">Resortes / kits / ride height</option>
+            <option value="Servicio de motor" data-i18n="qf_o4">Servicio de motor</option>
+            <option value="Bike build completo" data-i18n="qf_o5">Bike build completo</option>
+            <option value="Soporte en pista" data-i18n="qf_o6">Soporte en pista</option>
+            <option value="Otro" data-i18n="qf_o7">Otro</option>
           </select>
         </div>
-        <div class="field"><label>Mensaje</label><textarea rows="4" name="mensaje" placeholder="Cuéntanos qué sientes en tu moto..."></textarea></div>
-        <button class="btn" type="submit">Enviar</button>
+        <div class="field"><label data-i18n="qf_msg">Mensaje</label><textarea rows="4" name="mensaje" placeholder="Cuéntanos qué sientes en tu moto..." data-i18n-ph="qf_msg_ph"></textarea></div>
+        <button class="btn" type="submit" data-i18n="qf_btn">Enviar</button>
         <p id="form-status" style="margin-top:14px;font-weight:700"></p>
       </form>
+    </div>
+
+    <!-- ================= SOLICITUD DE SERVICIO DETALLADA ================= -->
+    <div style="margin-top:80px">
+      <span class="tag" data-i18n="srf_tag">Solicitud de servicio</span>
+      <h2 style="font-size:2.2rem;margin-top:10px" data-i18n="srf_h2">Hoja de servicio personalizada</h2>
+      <p style="max-width:680px;margin-top:10px;color:var(--silver)" data-i18n="srf_intro">Llena la hoja según el servicio que necesitas. Entre más detalles nos des de tu moto y tu forma de rodar, más preciso será el ajuste. Elige una pestaña:</p>
+
+      <div class="srf-tabs">
+        <button type="button" class="srf-tab active" data-srf="susp"><span data-i18n="tab_susp">Suspensión</span><small data-i18n="tab_susp_sub">Forks · Shock · Revalve · Service</small></button>
+        <button type="button" class="srf-tab" data-srf="motor"><span data-i18n="tab_motor">Motor</span><small data-i18n="tab_motor_sub">Válvulas · Cilindro · Cabeza · Porting</small></button>
+      </div>
+
+      <!-- ---------- FORMULARIO SUSPENSIÓN ---------- -->
+      <div class="srf-panel active" id="srf-panel-susp">
+        <form class="srf-form" action="https://formspree.io/f/xzdqgnka" method="POST">
+          <input type="hidden" name="_subject" value="KLIKS — Solicitud de SUSPENSIÓN">
+          <input type="hidden" name="Tipo de solicitud" value="Servicio de Suspensión">
+
+          <div class="srf-block">
+            <h4 data-i18n="block_customer">Datos del cliente</h4>
+            <div class="srf-grid cols-3">
+              <div class="field"><label data-i18n="f_name">Nombre *</label><input type="text" name="Nombre" required></div>
+              <div class="field"><label data-i18n="f_phone">Teléfono / WhatsApp *</label><input type="tel" name="Teléfono" required></div>
+              <div class="field"><label data-i18n="f_email">Correo</label><input type="email" name="Email"></div>
+              <div class="field"><label data-i18n="f_addr">Dirección</label><input type="text" name="Dirección"></div>
+              <div class="field"><label data-i18n="f_city">Ciudad</label><input type="text" name="Ciudad"></div>
+              <div class="field"><label data-i18n="f_state">Estado / CP</label><input type="text" name="Estado y CP"></div>
+            </div>
+            <div class="srf-grid cols-3" style="margin-top:14px">
+              <div class="srf-opt"><span data-i18n="opt_dealer">¿Eres distribuidor?</span>
+                <div class="srf-choices">
+                  <label><input type="radio" name="Distribuidor" value="Sí"><span>Sí</span></label>
+                  <label><input type="radio" name="Distribuidor" value="No" checked><span>No</span></label>
+                </div></div>
+              <div class="srf-opt"><span data-i18n="opt_inshop">¿Moto en el taller?</span>
+                <div class="srf-choices">
+                  <label><input type="radio" name="Moto en taller" value="Sí"><span>Sí</span></label>
+                  <label><input type="radio" name="Moto en taller" value="No" checked><span>No</span></label>
+                </div></div>
+              <div class="field"><label data-i18n="f_date">Fecha deseada</label><input type="date" name="Fecha deseada"></div>
+            </div>
+          </div>
+
+          <div class="srf-block">
+            <h4 data-i18n="block_bike">Tu moto</h4>
+            <div class="srf-grid cols-4">
+              <div class="field"><label data-i18n="f_year">Año</label><input type="text" name="Año"></div>
+              <div class="field"><label data-i18n="f_make">Marca</label><input type="text" name="Marca" placeholder="KTM, Yamaha…"></div>
+              <div class="field"><label data-i18n="f_model">Modelo</label><input type="text" name="Modelo" placeholder="250 SX-F"></div>
+              <div class="field"><label data-i18n="f_vin">VIN (últimos 4)</label><input type="text" name="VIN (últimos 4)" maxlength="4"></div>
+            </div>
+          </div>
+
+          <div class="srf-block">
+            <h4 data-i18n="block_ride">Tu forma de rodar</h4>
+            <div class="srf-grid cols-4">
+              <div class="field"><label data-i18n="f_weight">Peso del piloto (sin equipo)</label><input type="text" name="Peso del piloto" placeholder="kg / lb"></div>
+              <div class="field"><label data-i18n="f_type">Tipo de manejo</label><input type="text" name="Tipo de manejo" placeholder="MX, Enduro, Trail…"></div>
+              <div class="field"><label data-i18n="f_level">Nivel</label><input type="text" name="Nivel" placeholder="Principiante / Inter / Pro" data-i18n-ph="f_level_ph"></div>
+              <div class="field"><label data-i18n="f_age">Edad</label><input type="text" name="Edad"></div>
+            </div>
+            <div class="srf-grid cols-2" style="margin-top:14px">
+              <div class="srf-opt"><span data-i18n="opt_tank">Tanque sobredimensionado</span>
+                <div class="srf-choices">
+                  <label><input type="radio" name="Tanque sobredimensionado" value="Sí"><span>Sí</span></label>
+                  <label><input type="radio" name="Tanque sobredimensionado" value="No" checked><span>No</span></label>
+                </div></div>
+              <div class="field"><label data-i18n="f_howheard">¿Cómo nos conociste?</label><input type="text" name="Cómo nos conociste"></div>
+            </div>
+          </div>
+
+          <div class="srf-block">
+            <h4 data-i18n="block_services">Servicios solicitados</h4>
+            <div class="srf-services">
+              <div class="srf-srv-col">
+                <h5 data-i18n="col_forks">Forks (Horquilla): Rebuild o Revalve</h5>
+                <div class="srf-opt"><span data-i18n-html="fk_springs">Resortes <em>Springs</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Forks · Springs" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Forks · Springs" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Forks · Springs" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="fk_seals">Retenes <em>Seals</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Forks · Seals" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Forks · Seals" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Forks · Seals" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="fk_bushings">Bujes <em>Bushings</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Forks · Bushings" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Forks · Bushings" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Forks · Bushings" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="fk_lowering">Lowering <em>(bajar altura)</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Forks · Lowering" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Forks · Lowering" value="No" checked><span>No</span></label>
+                  </div></div>
+                <div class="srf-inline" style="margin-top:8px"><span data-i18n="lbl_lowering">Lowering:</span> <input class="srf-mm" type="text" name="Forks · Lowering mm"> <span data-i18n="lbl_atwheel">mm (@ rueda)</span></div>
+              </div>
+
+              <div class="srf-srv-col">
+                <h5 data-i18n="col_shock">Shock (Amortiguador): Rebuild o Revalve</h5>
+                <div class="srf-opt"><span data-i18n-html="sh_spring">Resorte <em>Spring</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Shock · Spring" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Shock · Spring" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Shock · Spring" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="sh_seals">Retenes <em>Seals</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Shock · Seals" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Shock · Seals" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Shock · Seals" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="sh_bushing">Buje <em>Bushing</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Shock · Bushing" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Shock · Bushing" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Shock · Bushing" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="sh_bumper">Bottom-Out Bumper <em>(tope de fondo)</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Shock · Bottom-Out Bumper" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Shock · Bottom-Out Bumper" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Shock · Bottom-Out Bumper" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="sh_lowering">Lowering <em>(bajar altura)</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Shock · Lowering" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Shock · Lowering" value="No" checked><span>No</span></label>
+                  </div></div>
+                <div class="srf-inline" style="margin-top:8px"><span data-i18n="lbl_lowering">Lowering:</span> <input class="srf-mm" type="text" name="Shock · Lowering mm"> <span data-i18n="lbl_atwheel">mm (@ rueda)</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="srf-block">
+            <h4 data-i18n="susp_notes_h">¿Qué quieres que sepamos antes de trabajar tu suspensión?</h4>
+            <textarea rows="4" name="Notas" placeholder="¿Qué sientes en la moto? ¿Fondea, patea, va dura, va blanda? Cuéntanos todo." data-i18n-ph="susp_notes_ph"></textarea>
+          </div>
+
+          <div class="srf-note" data-i18n-html="srf_note"><strong>Envío:</strong> no envíes tus componentes en estuches de arma (gun cases); las paqueterías no aseguran daños y el riesgo de robo es alto. Empaca en caja de suspensión. Si tienes dudas de empaque, contáctanos antes.</div>
+          <p class="srf-legal" data-i18n="srf_legal">Autorizo el trabajo de servicio descrito junto con el material necesario, y otorgo permiso para operar la suspensión con fines de prueba e inspección. Se reconoce un derecho de retención (lien) sobre los componentes para garantizar el monto de las reparaciones.</p>
+
+          <div class="srf-submit-row">
+            <button class="btn" type="submit" data-i18n="srf_submit">Enviar solicitud</button>
+            <span style="font-size:.8rem;color:var(--silver)" data-i18n="srf_paynote">El pago se coordina por teléfono/WhatsApp — no pedimos datos de tarjeta en línea.</span>
+          </div>
+          <p class="srf-status" style="margin-top:14px;font-weight:700"></p>
+        </form>
+      </div>
+
+      <!-- ---------- FORMULARIO MOTOR ---------- -->
+      <div class="srf-panel" id="srf-panel-motor">
+        <form class="srf-form" action="https://formspree.io/f/xzdqgnka" method="POST">
+          <input type="hidden" name="_subject" value="KLIKS — Solicitud de MOTOR">
+          <input type="hidden" name="Tipo de solicitud" value="Servicio de Motor">
+
+          <div class="srf-block">
+            <h4 data-i18n="block_customer">Datos del cliente</h4>
+            <div class="srf-grid cols-3">
+              <div class="field"><label data-i18n="f_name">Nombre *</label><input type="text" name="Nombre" required></div>
+              <div class="field"><label data-i18n="f_phone">Teléfono / WhatsApp *</label><input type="tel" name="Teléfono" required></div>
+              <div class="field"><label data-i18n="f_email">Correo</label><input type="email" name="Email"></div>
+              <div class="field"><label data-i18n="f_addr">Dirección</label><input type="text" name="Dirección"></div>
+              <div class="field"><label data-i18n="f_city">Ciudad</label><input type="text" name="Ciudad"></div>
+              <div class="field"><label data-i18n="f_state">Estado / CP</label><input type="text" name="Estado y CP"></div>
+            </div>
+            <div class="srf-grid cols-3" style="margin-top:14px">
+              <div class="srf-opt"><span data-i18n="opt_dealer">¿Eres distribuidor?</span>
+                <div class="srf-choices">
+                  <label><input type="radio" name="Distribuidor" value="Sí"><span>Sí</span></label>
+                  <label><input type="radio" name="Distribuidor" value="No" checked><span>No</span></label>
+                </div></div>
+              <div class="srf-opt"><span data-i18n="opt_inshop">¿Moto en el taller?</span>
+                <div class="srf-choices">
+                  <label><input type="radio" name="Moto en taller" value="Sí"><span>Sí</span></label>
+                  <label><input type="radio" name="Moto en taller" value="No" checked><span>No</span></label>
+                </div></div>
+              <div class="field"><label data-i18n="f_date">Fecha deseada</label><input type="date" name="Fecha deseada"></div>
+            </div>
+          </div>
+
+          <div class="srf-block">
+            <h4 data-i18n="block_bike">Tu moto</h4>
+            <div class="srf-grid cols-4">
+              <div class="field"><label data-i18n="f_year">Año</label><input type="text" name="Año"></div>
+              <div class="field"><label data-i18n="f_make">Marca</label><input type="text" name="Marca" placeholder="KTM, Yamaha…"></div>
+              <div class="field"><label data-i18n="f_model">Modelo</label><input type="text" name="Modelo" placeholder="250 SX-F"></div>
+              <div class="field"><label data-i18n="f_vin">VIN (últimos 4)</label><input type="text" name="VIN (últimos 4)" maxlength="4"></div>
+            </div>
+            <div class="srf-grid cols-3" style="margin-top:14px">
+              <div class="field"><label data-i18n="f_type">Tipo de manejo</label><input type="text" name="Tipo de manejo" placeholder="MX, Enduro…"></div>
+              <div class="field"><label data-i18n="f_tshirt">Talla de playera</label>
+                <select name="Talla de playera"><option value="">—</option><option>YS</option><option>YM</option><option>YL</option><option>M</option><option>L</option><option>XL</option><option>XXL</option></select>
+              </div>
+              <div class="field"><label data-i18n="f_howheard">¿Cómo nos conociste?</label><input type="text" name="Cómo nos conociste"></div>
+            </div>
+          </div>
+
+          <div class="srf-block">
+            <h4 data-i18n="block_services">Servicios solicitados</h4>
+            <div class="srf-services">
+              <div class="srf-srv-col">
+                <h5 data-i18n="col_valves">Válvulas y asientos</h5>
+                <div class="srf-opt"><span data-i18n-html="v_3angle">Valve Job 3 ángulos <em>estándar</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Valve Job 3 ángulos" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Valve Job 3 ángulos" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="v_5angle">Valve Job 5 ángulos <em>performance</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Valve Job 5 ángulos" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Valve Job 5 ángulos" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="v_seats">Instalación de asientos <em>requiere valve job</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Instalación de asientos" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Instalación de asientos" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="v_guides">Instalación de guías <em>requiere valve job</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Instalación de guías" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Instalación de guías" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="v_refacing">Rectificado de válvulas <em>Refacing</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Rectificado de válvulas" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Rectificado de válvulas" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Rectificado de válvulas" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="v_backcut">Backcutting <em>(algunos modelos)</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Valve Backcutting" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Valve Backcutting" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="v_guidehone">Honeado de guías <em>Guide Honing</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Honeado de guías" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Honeado de guías" value="No"><span>No</span></label>
+                  </div></div>
+
+                <h5 style="margin-top:22px" data-i18n-html="col_perf">Extras de performance <em style="font-style:normal;color:var(--silver);font-size:.72rem">(algunos modelos)</em></h5>
+                <div class="srf-opt"><span data-i18n="p_customvalves">Válvulas a medida</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Válvulas a medida" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Válvulas a medida" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n="p_cp">Juego de pistón CP</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Pistón CP" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Pistón CP" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n="p_vortex">Vortex ECU</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Vortex ECU" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Vortex ECU" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n="p_vortexmap">Vortex ECU — mapeo a medida</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Vortex ECU mapeo" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Vortex ECU mapeo" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n="p_fmfpipe">FMF Pipe / Header</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="FMF Pipe/Header" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="FMF Pipe/Header" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n="p_fmfsil">FMF Silencer / Muffler</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="FMF Silencer" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="FMF Silencer" value="No"><span>No</span></label>
+                  </div></div>
+              </div>
+
+              <div class="srf-srv-col">
+                <h5 data-i18n="col_cyl">Cilindro y cabeza</h5>
+                <div class="srf-opt"><span data-i18n="c_pocket">Pocket Porting</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Pocket Porting" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Pocket Porting" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="c_full">Full Porting <em>hi-performance</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Full Porting" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Full Porting" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="c_epoxy">Epoxy Porting <em>(algunos modelos)</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Epoxy Porting" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Epoxy Porting" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="c_headdeck">Head Decking <em>(planeado de cabeza)</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Head Decking" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Head Decking" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n="c_cyldeck">Cylinder Decking</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Cylinder Decking" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Cylinder Decking" value="No"><span>No</span></label>
+                    <label><input type="radio" name="Cylinder Decking" value="Si req."><span>Si req.</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n="c_headrebuild">Reconstrucción de cabeza</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Reconstrucción de cabeza" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Reconstrucción de cabeza" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="c_boring">Rectificado de cilindro <em>Boring</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Cylinder Boring" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Cylinder Boring" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="srf-opt"><span data-i18n-html="c_honing">Honeado de cilindro <em>Honing</em></span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Cylinder Honing" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Cylinder Honing" value="No"><span>No</span></label>
+                  </div></div>
+
+                <h5 style="margin-top:22px" data-i18n="col_other">Otros servicios</h5>
+                <div class="srf-opt"><span data-i18n="o_crank">Reconstrucción y trueado de cigüeñal</span>
+                  <div class="srf-choices">
+                    <label><input type="radio" name="Cigüeñal Rebuild & Truing" value="Sí"><span>Sí</span></label>
+                    <label><input type="radio" name="Cigüeñal Rebuild & Truing" value="No"><span>No</span></label>
+                  </div></div>
+                <div class="field" style="margin-top:14px"><label data-i18n="o_other">Otro servicio</label><input type="text" name="Otro servicio"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="srf-block">
+            <h4 data-i18n="block_notes">Notas</h4>
+            <textarea rows="4" name="Notas" placeholder="Cuéntanos cualquier detalle importante del motor o lo que buscas lograr." data-i18n-ph="motor_notes_ph"></textarea>
+          </div>
+
+          <div class="srf-submit-row">
+            <button class="btn" type="submit" data-i18n="srf_submit">Enviar solicitud</button>
+            <span style="font-size:.8rem;color:var(--silver)" data-i18n="srf_paynote">El pago se coordina por teléfono/WhatsApp — no pedimos datos de tarjeta en línea.</span>
+          </div>
+          <p class="srf-status" style="margin-top:14px;font-weight:700"></p>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
@@ -528,55 +899,230 @@
       <div>
         <img src="logo.png" alt="KLIKS Suspension" style="height:64px;width:auto;border-radius:8px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
         <svg viewBox="0 0 430 100" width="180" height="42" aria-label="KLIKS Suspension" style="display:none"><use href="#kliks-lockup"/></svg>
-        <p style="margin-top:14px;max-width:340px">Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.</p>
+        <p style="margin-top:14px;max-width:340px" data-i18n="foot_about">Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.</p>
         <p style="margin-top:10px">Mexicali, Baja California, México · <a href="tel:+526862765484" style="color:#9A7B00">(686) 276-5484</a></p>
       </div>
       <div>
-        <h4>Servicios</h4>
+        <h4 data-i18n="foot_services_h">Servicios</h4>
         <ul>
-          <li><a href="#servicios">Revalve de suspensión</a></li>
-          <li><a href="#servicios">Servicio de suspensión</a></li>
-          <li><a href="#servicios">Servicio de motor</a></li>
-          <li><a href="#servicios">Bike build completo</a></li>
-          <li><a href="#servicios">Soporte en pista</a></li>
+          <li><a href="#servicios" data-i18n="card1_h3">Revalve de suspensión</a></li>
+          <li><a href="#servicios" data-i18n="card2_h3">Servicio de suspensión</a></li>
+          <li><a href="#servicios" data-i18n="card4_h3">Servicio de motor</a></li>
+          <li><a href="#servicios" data-i18n="card5_h3">Bike build completo</a></li>
+          <li><a href="#servicios" data-i18n="card6_h3">Soporte en pista</a></li>
         </ul>
       </div>
       <div>
-        <h4>Enlaces</h4>
+        <h4 data-i18n="foot_links_h">Enlaces</h4>
         <ul>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#racing">Racing / Blog</a></li>
-          <li><a href="#proceso">Cómo trabajamos</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+          <li><a href="#racing" data-i18n="foot_l_racing">Racing / Blog</a></li>
+          <li><a href="#proceso" data-i18n="foot_l_process">Cómo trabajamos</a></li>
+          <li><a href="#testimonios" data-i18n="nav_reviews">Testimonios</a></li>
+          <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
         </ul>
       </div>
     </div>
-    <div class="copy">© 2026 KLIKS Suspension. Todos los derechos reservados.</div>
+    <div class="copy" data-i18n="copy">© 2026 KLIKS Suspension. Todos los derechos reservados.</div>
   </div>
 </footer>
 
 <script>
+  // ===== Diccionario de traducción ES / EN =====
+  const T = {
+    es: {
+      topbar:'⚡ Agenda tu servicio hoy — Llámanos: <a href="tel:+526862765484" style="color:inherit;font-weight:800">(686) 276-5484</a> · Mexicali, B.C.',
+      nav_home:'Inicio', nav_services:'Servicios', nav_process:'Proceso', nav_about:'Nosotros', nav_racing:'Racing', nav_reviews:'Testimonios', nav_contact:'Contacto',
+      hero_tag:'Taller especializado en motocross y off-road', hero_h1:'Tu suspensión, ajustada a <em>tu forma de rodar</em>',
+      hero_p:'En KLIKS Suspension afinamos cada clik de tu moto: suspensión, motor y preparación completa. Más tracción, más control y más confianza en cada vuelta, sin importar el terreno.',
+      hero_cta1:'Agendar Servicio', hero_cta2:'Ver Servicios',
+      strip:'Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽ Revalve ⫽ Servicio de Suspensión ⫽ Motor ⫽ Bike Build ⫽ Soporte en Pista ⫽',
+      serv_tag:'Lo que hacemos', serv_h2:'Servicios pensados para mejorar tu rodada',
+      card1_h3:'Revalve de Suspensión', card1_p:'Modificamos internamente tu horquilla y amortiguador según tu peso, nivel y tipo de terreno. Setup personalizado, no genérico.', card1_li1:'Perfil de piloto personalizado', card1_li2:'Pistones y shims a la medida', card1_li3:'Pruebas y ajuste fino',
+      card2_h3:'Servicio de Suspensión', card2_p:'Mantenimiento completo: cambio de aceite, sellos, bujes e inspección de componentes para que tu suspensión trabaje como nueva.', card2_li1:'Cambio de sellos y aceite', card2_li2:'Inspección de barras y botellas', card2_li3:'Ajuste de SAG y precarga',
+      card3_h3:'Resortes y Kits', card3_p:'Conversión de resortes, kits para horquilla y ajuste de altura (ride height) según tu peso y estilo de manejo.', card3_li1:'Kit de conversión de resortes', card3_li2:'Kits para horquilla', card3_li3:'Modificación de altura',
+      card4_h3:'Servicio de Motor', card4_p:'Reconstrucción y modificación de motor con piezas OEM o aftermarket, buscando el balance ideal entre potencia y durabilidad.', card4_li1:'Top-end y bottom-end', card4_li2:'Mejoras de rendimiento', card4_li3:'Diagnóstico completo',
+      card5_h3:'Bike Build Completo', card5_p:'Preparación total de tu moto desde el chasis: combinamos suspensión, motor y mantenimiento para entregarla lista para competir.', card5_li1:'Reconstrucción integral', card5_li2:'Preparación pre-carrera', card5_li3:'Mantenimiento programado',
+      card6_h3:'Soporte en Pista', card6_p:'Te acompañamos en carreras y eventos seleccionados con ajustes de suspensión y asistencia técnica directamente en la pista.', card6_li1:'Ajustes el día del evento', card6_li2:'Asesoría de setup', card6_li3:'Atención a pilotos y equipos',
+      proc_tag:'Cómo trabajamos', proc_h2:'De tu garage a la pista en 4 pasos',
+      step1_h3:'Cuéntanos de ti', step1_p:'Llenas tu perfil de piloto: peso, nivel, terreno y qué sientes que le falta a tu moto.',
+      step2_h3:'Diagnóstico', step2_p:'Recibimos tu suspensión o tu moto, la desarmamos e inspeccionamos cada componente.',
+      step3_h3:'Trabajo a la medida', step3_p:'Ejecutamos el servicio o revalve con especificaciones calculadas para tu caso, no plantillas.',
+      step4_h3:'Entrega y seguimiento', step4_p:'Te entregamos con setup recomendado y damos seguimiento para afinar cliks después de rodar.',
+      about_tag:'Nosotros', about_h2:'La diferencia está en los cliks',
+      about_p1:'KLIKS Suspension nace de la pasión por el off-road y de una idea simple: la mejor moto no es la más cara, es la que está ajustada a su piloto. Por eso cada trabajo que sale de nuestro taller lleva un setup pensado para una sola persona: tú.',
+      about_p2:'No vendemos lo que no necesitas. Si tu suspensión solo requiere servicio, te lo decimos. Si tu estilo pide un revalve, te explicamos por qué. Nuestra meta es que tu siguiente rodada sea la mejor que has tenido.',
+      about_p3:'Trabajamos con todas las marcas y modelos de motocross, enduro y off-road.', about_btn:'Conócenos',
+      badge_label:'Precisión en cada clik', badge1:'Suspensiones ajustadas', badge2:'Setup personalizado', badge3:'Enduro / Off-Road', badge4:'Pilotos satisfechos',
+      desert_tag:'Mexicali · Baja California · México', desert_h2:'Forjados en el desierto',
+      desert_p:'Arena, piedra, dunas y el calor de la capital de Baja California. Aquí no hay terreno fácil — por eso cada suspensión que sale de KLIKS está probada para aguantar lo más duro del off-road bajacaliforniano.',
+      racing_tag:'Racing', racing_h2:'Blog de carreras KLIKS Racing',
+      racing_intro:'Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.',
+      post_meta:'[Fecha] · [Pista / Ciudad]', post_title:'[Título de la crónica de carrera]',
+      post1_p:'Resumen de la fecha: cómo les fue a nuestros pilotos, condiciones de la pista y los ajustes de suspensión que marcaron la diferencia.',
+      post2_p:'Resumen de la fecha: resultados, anécdotas del paddock y el trabajo de soporte en pista que hicimos durante el evento.',
+      post3_p:'Resumen de la fecha: análisis del terreno, setup recomendado para esa pista y próximas fechas del calendario.',
+      post_more:'Leer crónica completa →', racing_btn1:'Ver todas las crónicas', racing_btn2:'¿Corres? Pide soporte en pista',
+      testi_tag:'Testimonios', testi_h2:'Lo que dicen nuestros pilotos',
+      t1_p:'"Después del revalve la moto absorbe todo. Recuperé la confianza en las frenadas con braking bumps y ya no me escupe en los cuadrados."', t1_what:'Motocross — Intermedio',
+      t2_p:'"Me explicaron todo el proceso y el porqué de cada ajuste. Se nota que ajustan para tu peso y estilo, no un setup genérico."', t2_what:'Enduro — Amateur',
+      t3_p:'"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó perfecta."', t3_what:'Off-Road — Experto', who_ph:'[Nombre del piloto]',
+      contact_tag:'Contacto', contact_h2:'Agenda tu servicio',
+      ci_phone:'Teléfono / WhatsApp', ci_email:'Correo', ci_addr:'Dirección', ci_addr_val:'Mexicali, Baja California, México', ci_hours:'Horario', ci_hours_val:'Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00',
+      qf_name:'Nombre', qf_name_ph:'Tu nombre', qf_contact:'Teléfono o correo', qf_contact_ph:'¿Cómo te contactamos?', qf_bike:'Moto (marca / modelo / año)', qf_bike_ph:'Ej. KTM 250 SX-F 2023', qf_service:'Servicio',
+      qf_o1:'Revalve de suspensión', qf_o2:'Servicio de suspensión', qf_o3:'Resortes / kits / ride height', qf_o4:'Servicio de motor', qf_o5:'Bike build completo', qf_o6:'Soporte en pista', qf_o7:'Otro',
+      qf_msg:'Mensaje', qf_msg_ph:'Cuéntanos qué sientes en tu moto...', qf_btn:'Enviar',
+      srf_tag:'Solicitud de servicio', srf_h2:'Hoja de servicio personalizada', srf_intro:'Llena la hoja según el servicio que necesitas. Entre más detalles nos des de tu moto y tu forma de rodar, más preciso será el ajuste. Elige una pestaña:',
+      tab_susp:'Suspensión', tab_susp_sub:'Forks · Shock · Revalve · Service', tab_motor:'Motor', tab_motor_sub:'Válvulas · Cilindro · Cabeza · Porting',
+      block_customer:'Datos del cliente', f_name:'Nombre *', f_phone:'Teléfono / WhatsApp *', f_email:'Correo', f_addr:'Dirección', f_city:'Ciudad', f_state:'Estado / CP',
+      opt_dealer:'¿Eres distribuidor?', opt_inshop:'¿Moto en el taller?', f_date:'Fecha deseada',
+      block_bike:'Tu moto', f_year:'Año', f_make:'Marca', f_model:'Modelo', f_vin:'VIN (últimos 4)',
+      block_ride:'Tu forma de rodar', f_weight:'Peso del piloto (sin equipo)', f_type:'Tipo de manejo', f_level:'Nivel', f_level_ph:'Principiante / Inter / Pro', f_age:'Edad', opt_tank:'Tanque sobredimensionado', f_howheard:'¿Cómo nos conociste?',
+      block_services:'Servicios solicitados', col_forks:'Forks (Horquilla): Rebuild o Revalve',
+      fk_springs:'Resortes <em>Springs</em>', fk_seals:'Retenes <em>Seals</em>', fk_bushings:'Bujes <em>Bushings</em>', fk_lowering:'Lowering <em>(bajar altura)</em>',
+      lbl_lowering:'Lowering:', lbl_atwheel:'mm (@ rueda)',
+      col_shock:'Shock (Amortiguador): Rebuild o Revalve', sh_spring:'Resorte <em>Spring</em>', sh_seals:'Retenes <em>Seals</em>', sh_bushing:'Buje <em>Bushing</em>', sh_bumper:'Bottom-Out Bumper <em>(tope de fondo)</em>', sh_lowering:'Lowering <em>(bajar altura)</em>',
+      susp_notes_h:'¿Qué quieres que sepamos antes de trabajar tu suspensión?', susp_notes_ph:'¿Qué sientes en la moto? ¿Fondea, patea, va dura, va blanda? Cuéntanos todo.',
+      srf_note:'<strong>Envío:</strong> no envíes tus componentes en estuches de arma (gun cases); las paqueterías no aseguran daños y el riesgo de robo es alto. Empaca en caja de suspensión. Si tienes dudas de empaque, contáctanos antes.',
+      srf_legal:'Autorizo el trabajo de servicio descrito junto con el material necesario, y otorgo permiso para operar la suspensión con fines de prueba e inspección. Se reconoce un derecho de retención (lien) sobre los componentes para garantizar el monto de las reparaciones.',
+      srf_submit:'Enviar solicitud', srf_paynote:'El pago se coordina por teléfono/WhatsApp — no pedimos datos de tarjeta en línea.',
+      f_tshirt:'Talla de playera', col_valves:'Válvulas y asientos',
+      v_3angle:'Valve Job 3 ángulos <em>estándar</em>', v_5angle:'Valve Job 5 ángulos <em>performance</em>', v_seats:'Instalación de asientos <em>requiere valve job</em>', v_guides:'Instalación de guías <em>requiere valve job</em>', v_refacing:'Rectificado de válvulas <em>Refacing</em>', v_backcut:'Backcutting <em>(algunos modelos)</em>', v_guidehone:'Honeado de guías <em>Guide Honing</em>',
+      col_perf:'Extras de performance <em style="font-style:normal;color:var(--silver);font-size:.72rem">(algunos modelos)</em>', p_customvalves:'Válvulas a medida', p_cp:'Juego de pistón CP', p_vortex:'Vortex ECU', p_vortexmap:'Vortex ECU — mapeo a medida', p_fmfpipe:'FMF Pipe / Header', p_fmfsil:'FMF Silencer / Muffler',
+      col_cyl:'Cilindro y cabeza', c_pocket:'Pocket Porting', c_full:'Full Porting <em>hi-performance</em>', c_epoxy:'Epoxy Porting <em>(algunos modelos)</em>', c_headdeck:'Head Decking <em>(planeado de cabeza)</em>', c_cyldeck:'Cylinder Decking', c_headrebuild:'Reconstrucción de cabeza', c_boring:'Rectificado de cilindro <em>Boring</em>', c_honing:'Honeado de cilindro <em>Honing</em>',
+      col_other:'Otros servicios', o_crank:'Reconstrucción y trueado de cigüeñal', o_other:'Otro servicio',
+      block_notes:'Notas', motor_notes_ph:'Cuéntanos cualquier detalle importante del motor o lo que buscas lograr.',
+      foot_about:'Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.', foot_services_h:'Servicios', foot_links_h:'Enlaces', foot_l_racing:'Racing / Blog', foot_l_process:'Cómo trabajamos',
+      copy:'© 2026 KLIKS Suspension. Todos los derechos reservados.',
+      st_sending:'Enviando...', st_ok:'¡Mensaje enviado! Te contactamos pronto.', st_err:'Hubo un error al enviar. Intenta de nuevo o márcanos al (686) 276-5484.',
+      srf_sending:'Enviando solicitud...', srf_ok:'¡Solicitud enviada! Te contactamos pronto para confirmar tu servicio.', srf_err:'Hubo un error al enviar. Intenta de nuevo o márcanos al (686) 276-5484.'
+    },
+    en: {
+      topbar:'⚡ Book your service today — Call us: <a href="tel:+526862765484" style="color:inherit;font-weight:800">(686) 276-5484</a> · Mexicali, B.C.',
+      nav_home:'Home', nav_services:'Services', nav_process:'Process', nav_about:'About', nav_racing:'Racing', nav_reviews:'Reviews', nav_contact:'Contact',
+      hero_tag:'Specialized motocross & off-road shop', hero_h1:'Your suspension, tuned to <em>the way you ride</em>',
+      hero_p:'At KLIKS Suspension we fine-tune every click of your bike: suspension, engine and full prep. More traction, more control and more confidence on every lap, whatever the terrain.',
+      hero_cta1:'Book Service', hero_cta2:'View Services',
+      strip:'Revalve ⫽ Suspension Service ⫽ Engine ⫽ Bike Build ⫽ Track Support ⫽ Revalve ⫽ Suspension Service ⫽ Engine ⫽ Bike Build ⫽ Track Support ⫽',
+      serv_tag:'What we do', serv_h2:'Services built to improve your ride',
+      card1_h3:'Suspension Revalve', card1_p:'We modify your fork and shock internals to match your weight, level and terrain. Custom setup, not generic.', card1_li1:'Personalized rider profile', card1_li2:'Custom pistons and shims', card1_li3:'Testing and fine tuning',
+      card2_h3:'Suspension Service', card2_p:'Full maintenance: oil, seals, bushings and component inspection so your suspension works like new.', card2_li1:'Seal and oil change', card2_li2:'Tube and lower inspection', card2_li3:'SAG and preload adjustment',
+      card3_h3:'Springs & Kits', card3_p:'Spring conversions, fork kits and ride height adjustment based on your weight and riding style.', card3_li1:'Spring conversion kit', card3_li2:'Fork kits', card3_li3:'Ride height modification',
+      card4_h3:'Engine Service', card4_p:'Engine rebuilds and mods with OEM or aftermarket parts, balancing power and durability.', card4_li1:'Top-end and bottom-end', card4_li2:'Performance upgrades', card4_li3:'Full diagnostics',
+      card5_h3:'Complete Bike Build', card5_p:'Full build from the chassis up: suspension, engine and maintenance combined, race-ready.', card5_li1:'Full rebuild', card5_li2:'Pre-race prep', card5_li3:'Scheduled maintenance',
+      card6_h3:'Track Support', card6_p:'We join you at select races with trackside suspension tuning and technical support.', card6_li1:'Race-day adjustments', card6_li2:'Setup advice', card6_li3:'Support for riders and teams',
+      proc_tag:'How we work', proc_h2:'From your garage to the track in 4 steps',
+      step1_h3:'Tell us about you', step1_p:'Fill in your rider profile: weight, level, terrain and what your bike is missing.',
+      step2_h3:'Diagnosis', step2_p:'We receive your suspension or bike, disassemble it and inspect every component.',
+      step3_h3:'Custom work', step3_p:'We perform the service or revalve with specs calculated for you, not templates.',
+      step4_h3:'Delivery and follow-up', step4_p:'We hand it back with a recommended setup and follow up to fine-tune clicks after you ride.',
+      about_tag:'About', about_h2:'The difference is in the clicks',
+      about_p1:'KLIKS Suspension was born from a passion for off-road and a simple idea: the best bike is not the most expensive one, it is the one tuned to its rider. That is why every job that leaves our shop carries a setup built for one person: you.',
+      about_p2:'We do not sell you what you do not need. If your suspension only needs a service, we tell you. If your style calls for a revalve, we explain why. Our goal is for your next ride to be the best you have ever had.',
+      about_p3:'We work with all motocross, enduro and off-road brands and models.', about_btn:'Meet us',
+      badge_label:'Precision in every click', badge1:'Suspensions tuned', badge2:'Custom setup', badge3:'Enduro / Off-Road', badge4:'Happy riders',
+      desert_tag:'Mexicali · Baja California · Mexico', desert_h2:'Forged in the desert',
+      desert_p:'Sand, rock, dunes and the heat of Baja California capital. There is no easy terrain here — that is why every suspension that leaves KLIKS is tested to handle the toughest Baja off-road.',
+      racing_tag:'Racing', racing_h2:'KLIKS Racing blog',
+      racing_intro:'We live racing from the inside. Here we post the report from each round: our riders results, setups that worked, event photos and what we learned on the track.',
+      post_meta:'[Date] · [Track / City]', post_title:'[Race report title]',
+      post1_p:'Round recap: how our riders did, track conditions and the suspension adjustments that made the difference.',
+      post2_p:'Round recap: results, paddock stories and the trackside support work we did during the event.',
+      post3_p:'Round recap: terrain analysis, recommended setup for that track and the next dates on the calendar.',
+      post_more:'Read full report →', racing_btn1:'View all reports', racing_btn2:'Race? Request track support',
+      testi_tag:'Reviews', testi_h2:'What our riders say',
+      t1_p:'"After the revalve the bike soaks up everything. I got my confidence back braking into bumps and it no longer spits me out in the chop."', t1_what:'Motocross — Intermediate',
+      t2_p:'"They walked me through the whole process and the reason for every adjustment. You can tell they tune for your weight and style, not a generic setup."', t2_what:'Enduro — Amateur',
+      t3_p:'"Track support made the difference on race day. Two clicks of adjustment between motos and the bike was perfect."', t3_what:'Off-Road — Expert', who_ph:'[Rider name]',
+      contact_tag:'Contact', contact_h2:'Book your service',
+      ci_phone:'Phone / WhatsApp', ci_email:'Email', ci_addr:'Address', ci_addr_val:'Mexicali, Baja California, Mexico', ci_hours:'Hours', ci_hours_val:'Mon–Fri 9:00–18:00 · Sat 9:00–14:00',
+      qf_name:'Name', qf_name_ph:'Your name', qf_contact:'Phone or email', qf_contact_ph:'How do we reach you?', qf_bike:'Motorcycle (make / model / year)', qf_bike_ph:'e.g. KTM 250 SX-F 2023', qf_service:'Service',
+      qf_o1:'Suspension revalve', qf_o2:'Suspension service', qf_o3:'Springs / kits / ride height', qf_o4:'Engine service', qf_o5:'Complete bike build', qf_o6:'Track support', qf_o7:'Other',
+      qf_msg:'Message', qf_msg_ph:'Tell us how your bike feels...', qf_btn:'Send',
+      srf_tag:'Service request', srf_h2:'Personalized service sheet', srf_intro:'Fill in the sheet for the service you need. The more details about your bike and riding style, the more precise the tune. Pick a tab:',
+      tab_susp:'Suspension', tab_susp_sub:'Forks · Shock · Revalve · Service', tab_motor:'Engine', tab_motor_sub:'Valves · Cylinder · Head · Porting',
+      block_customer:'Customer details', f_name:'Name *', f_phone:'Phone / WhatsApp *', f_email:'Email', f_addr:'Address', f_city:'City', f_state:'State / ZIP',
+      opt_dealer:'Are you a dealer?', opt_inshop:'Bike in the shop?', f_date:'Requested date',
+      block_bike:'Your bike', f_year:'Year', f_make:'Make', f_model:'Model', f_vin:'VIN (last 4)',
+      block_ride:'Your riding', f_weight:'Rider weight (no gear)', f_type:'Type of riding', f_level:'Skill level', f_level_ph:'Beginner / Inter / Pro', f_age:'Age', opt_tank:'Oversized tank', f_howheard:'How did you hear about us?',
+      block_services:'Requested services', col_forks:'Forks: Rebuild or Revalve',
+      fk_springs:'Springs', fk_seals:'Seals', fk_bushings:'Bushings', fk_lowering:'Lowering <em>(lower height)</em>',
+      lbl_lowering:'Lowering:', lbl_atwheel:'mm (@ wheel)',
+      col_shock:'Shock: Rebuild or Revalve', sh_spring:'Spring', sh_seals:'Seals', sh_bushing:'Bushing', sh_bumper:'Bottom-Out Bumper', sh_lowering:'Lowering <em>(lower height)</em>',
+      susp_notes_h:'What should we know before working on your suspension?', susp_notes_ph:'How does the bike feel? Does it bottom out, kick, feel harsh or soft? Tell us everything.',
+      srf_note:'<strong>Shipping:</strong> do not ship your components in gun cases; carriers do not insure damage and theft risk is high. Pack them in a suspension box. If unsure how to pack, contact us first.',
+      srf_legal:'I authorize the described service work along with the necessary materials, and grant permission to operate the suspension for testing and inspection. A mechanic lien on the components is acknowledged to secure the cost of repairs.',
+      srf_submit:'Submit request', srf_paynote:'Payment is arranged by phone/WhatsApp — we do not collect card details online.',
+      f_tshirt:'T-shirt size', col_valves:'Valves & seats',
+      v_3angle:'Valve Job 3-angle <em>standard</em>', v_5angle:'Valve Job 5-angle <em>performance</em>', v_seats:'Seat install <em>requires valve job</em>', v_guides:'Guide install <em>requires valve job</em>', v_refacing:'Valve refacing', v_backcut:'Backcutting <em>(some models)</em>', v_guidehone:'Guide honing',
+      col_perf:'Performance extras <em style="font-style:normal;color:var(--silver);font-size:.72rem">(some models)</em>', p_customvalves:'Custom valves', p_cp:'CP piston set', p_vortex:'Vortex ECU', p_vortexmap:'Vortex ECU — custom mapping', p_fmfpipe:'FMF Pipe / Header', p_fmfsil:'FMF Silencer / Muffler',
+      col_cyl:'Cylinder & head', c_pocket:'Pocket Porting', c_full:'Full Porting <em>hi-performance</em>', c_epoxy:'Epoxy Porting <em>(some models)</em>', c_headdeck:'Head Decking', c_cyldeck:'Cylinder Decking', c_headrebuild:'Cylinder head rebuild', c_boring:'Cylinder boring', c_honing:'Cylinder honing',
+      col_other:'Other services', o_crank:'Crank rebuild & truing', o_other:'Other service',
+      block_notes:'Notes', motor_notes_ph:'Tell us any important engine detail or what you want to achieve.',
+      foot_about:'Suspension and service shop for motocross, enduro and off-road. Precision in every click.', foot_services_h:'Services', foot_links_h:'Links', foot_l_racing:'Racing / Blog', foot_l_process:'How we work',
+      copy:'© 2026 KLIKS Suspension. All rights reserved.',
+      st_sending:'Sending...', st_ok:'Message sent! We will contact you soon.', st_err:'There was an error sending. Try again or call us at (686) 276-5484.',
+      srf_sending:'Sending request...', srf_ok:'Request sent! We will contact you soon to confirm your service.', srf_err:'There was an error sending. Try again or call us at (686) 276-5484.'
+    }
+  };
+
+  const CHOICE = { es:{'Sí':'Sí','No':'No','Si req.':'Si req.'}, en:{'Sí':'Yes','No':'No','Si req.':'If req.'} };
+  let cur = 'es';
+  try { const saved = localStorage.getItem('kliks_lang'); if (saved === 'es' || saved === 'en') cur = saved; } catch(e){}
+
+  function applyLang(lang){
+    cur = lang;
+    const d = T[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(d[k]!==undefined) el.textContent=d[k]; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{ const k=el.getAttribute('data-i18n-html'); if(d[k]!==undefined) el.innerHTML=d[k]; });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k=el.getAttribute('data-i18n-ph'); if(d[k]!==undefined) el.setAttribute('placeholder',d[k]); });
+    document.querySelectorAll('.srf-choices input').forEach(inp=>{ const span=inp.nextElementSibling; if(span && CHOICE[lang][inp.value]) span.textContent=CHOICE[lang][inp.value]; });
+    const btn=document.getElementById('langBtn'); if(btn) btn.textContent = lang==='es' ? 'EN' : 'ES';
+    try{ localStorage.setItem('kliks_lang',lang); }catch(e){}
+  }
+
+  document.getElementById('langBtn').addEventListener('click',()=>applyLang(cur==='es'?'en':'es'));
+  applyLang(cur);
+
   // cerrar menú móvil al hacer clic en un enlace
   document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
 
-  // envío del formulario a Formspree sin salir de la página
+  // envío del formulario rápido a Formspree
   document.getElementById('contact-form').addEventListener('submit', async function(e){
     e.preventDefault();
     const status = document.getElementById('form-status');
     status.style.color = '#565C64';
-    status.textContent = 'Enviando...';
+    status.textContent = T[cur].st_sending;
     try {
       const r = await fetch(this.action, {method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}});
-      if (r.ok) {
-        status.style.color = '#1B7A3D';
-        status.textContent = '¡Mensaje enviado! Te contactamos pronto.';
-        this.reset();
-      } else { throw new Error(); }
-    } catch (err) {
-      status.style.color = '#B3261E';
-      status.textContent = 'Hubo un error al enviar. Intenta de nuevo o márcanos al (686) 276-5484.';
-    }
+      if (r.ok) { status.style.color = '#1B7A3D'; status.textContent = T[cur].st_ok; this.reset(); }
+      else { throw new Error(); }
+    } catch (err) { status.style.color = '#B3261E'; status.textContent = T[cur].st_err; }
+  });
+
+  // ===== Solicitud de servicio detallada: tabs =====
+  document.querySelectorAll('.srf-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      const key = tab.dataset.srf;
+      document.querySelectorAll('.srf-tab').forEach(t=>t.classList.toggle('active', t===tab));
+      document.querySelectorAll('.srf-panel').forEach(p=>p.classList.toggle('active', p.id==='srf-panel-'+key));
+    });
+  });
+
+  // ===== Envío de los formularios detallados a Formspree =====
+  document.querySelectorAll('.srf-form').forEach(form=>{
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const status = this.querySelector('.srf-status');
+      status.style.color = '#565C64';
+      status.textContent = T[cur].srf_sending;
+      try {
+        const r = await fetch(this.action, {method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}});
+        if (r.ok) { status.style.color = '#1B7A3D'; status.textContent = T[cur].srf_ok; this.reset(); }
+        else { throw new Error(); }
+      } catch (err) { status.style.color = '#B3261E'; status.textContent = T[cur].srf_err; }
+    });
   });
 </script>
 </body>
