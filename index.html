@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KLIKS Suspension — Suspensión y Servicio para Motocross y Off-Road</title>
 <meta name="description" content="KLIKS Suspension: revalve, mantenimiento de suspensión, servicio de motor, preparación completa de moto y soporte en pista para motocross y off-road.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,600;1,800&display=swap" rel="stylesheet">
 <style>
   :root{
     --yellow:#FFD200;
@@ -19,10 +22,10 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Segoe UI',Arial,Helvetica,sans-serif;background:var(--bg);color:var(--black);line-height:1.6}
+  body{font-family:'Barlow Condensed','Segoe UI',Arial,Helvetica,sans-serif;background:var(--bg);color:var(--black);line-height:1.6;font-size:1.08rem}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-style:italic;text-transform:uppercase;letter-spacing:.5px;line-height:1.15}
+  h1,h2,h3{font-family:'Archivo Black',Impact,'Segoe UI',sans-serif;font-style:italic;text-transform:uppercase;letter-spacing:.5px;line-height:1.12}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
   .btn{display:inline-block;background:var(--yellow);color:var(--black);font-weight:800;text-transform:uppercase;padding:14px 32px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);transition:.2s;letter-spacing:1px;font-size:.95rem;border:none;cursor:pointer}
   .btn:hover{background:var(--black);color:var(--yellow)}
@@ -46,14 +49,15 @@
   .burger{display:none;background:none;border:none;color:var(--yellow);font-size:1.8rem;cursor:pointer}
 
   /* hero */
-  .hero{position:relative;min-height:88vh;display:flex;align-items:center;background:
-    linear-gradient(105deg,rgba(233,235,238,.96) 35%,rgba(233,235,238,.7) 70%,rgba(255,210,0,.25)),
-    repeating-linear-gradient(115deg,#DDE0E5 0 60px,#E6E8EC 60px 120px)}
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;background:
+    linear-gradient(100deg,rgba(10,10,13,.92) 25%,rgba(10,10,13,.55) 60%,rgba(255,210,0,.12)),
+    url('https://images.unsplash.com/photo-1628996796796-bcd82e0899d4?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat}
   .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--yellow) 60%,transparent)}
   .hero .wrap{padding-top:60px;padding-bottom:60px}
-  .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);max-width:780px;margin:18px 0}
-  .hero h1 em{color:#9A7B00;font-style:italic}
-  .hero p{max-width:620px;color:var(--silver);font-size:1.1rem;margin-bottom:34px}
+  .hero h1{font-size:clamp(2.3rem,5.5vw,4.2rem);max-width:780px;margin:18px 0;color:#FFFFFF;text-shadow:0 4px 22px rgba(0,0,0,.55)}
+  .hero h1 em{color:var(--yellow);font-style:italic}
+  .hero .tag{color:var(--yellow)}
+  .hero p{max-width:620px;color:#DDE0E4;font-size:1.18rem;margin-bottom:34px;text-shadow:0 2px 10px rgba(0,0,0,.5)}
   .hero .cta{display:flex;gap:16px;flex-wrap:wrap}
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
   .hero-art svg{width:100%;height:auto;filter:drop-shadow(0 12px 30px rgba(0,0,0,.6))}
@@ -67,13 +71,17 @@
 
   /* services */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:26px;margin-top:48px}
-  .card{background:var(--dark2);padding:34px 28px;border-top:4px solid var(--yellow);transition:.25s;position:relative}
-  .card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
-  .card .num{position:absolute;top:14px;right:18px;font-size:2.4rem;font-weight:900;font-style:italic;color:rgba(255,210,0,.18)}
-  .card h3{font-size:1.15rem;margin:14px 0 12px;color:var(--black)}
-  .card p{color:var(--silver);font-size:.95rem}
-  .card ul{margin:14px 0 0 18px;color:var(--silver);font-size:.9rem}
-  .icon{width:54px;height:54px;background:var(--yellow);clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);display:flex;align-items:center;justify-content:center;font-size:1.6rem}
+  .card{background:var(--dark2);padding:0;border-top:4px solid var(--yellow);transition:.25s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-6px);box-shadow:0 14px 32px rgba(0,0,0,.18)}
+  .card .num{position:absolute;top:10px;right:16px;font-size:2.4rem;font-weight:900;font-style:italic;color:rgba(255,255,255,.85);text-shadow:0 2px 8px rgba(0,0,0,.6);z-index:2;font-family:'Archivo Black',sans-serif}
+  .card-img{height:170px;overflow:hidden;position:relative}
+  .card-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35))}
+  .card-img img{width:100%;height:100%;object-fit:cover;transition:.35s}
+  .card:hover .card-img img{transform:scale(1.07)}
+  .card-body{padding:22px 26px 30px}
+  .card h3{font-size:1.05rem;margin:0 0 10px;color:var(--black)}
+  .card p{color:var(--silver);font-size:1rem}
+  .card ul{margin:14px 0 0 18px;color:var(--silver);font-size:.95rem}
 
   /* process */
   .process{background:var(--dark)}
@@ -92,12 +100,24 @@
   .badge-box .row div span{font-size:1.8rem;font-weight:900;color:#9A7B00;display:block;font-style:italic}
   .badge-box .row div small{color:var(--silver);text-transform:uppercase;letter-spacing:1px;font-size:.7rem}
 
+  /* desierto / mexicali */
+  .desert{background:linear-gradient(rgba(14,11,7,.62),rgba(14,11,7,.72)),url('https://images.unsplash.com/photo-1612599537672-64c5f1869280?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;text-align:center;padding:130px 0;border-top:6px solid var(--yellow);border-bottom:6px solid var(--yellow)}
+  .desert .tag{color:var(--yellow)}
+  .desert h2{color:#FFFFFF;font-size:clamp(1.8rem,4vw,3rem);margin-top:12px;text-shadow:0 4px 18px rgba(0,0,0,.6)}
+  .desert p{color:#EFE9DD;max-width:680px;margin:18px auto 0;font-size:1.15rem;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+
   /* racing blog */
+  #racing{background:linear-gradient(rgba(10,10,13,.88),rgba(10,10,13,.92)),url('https://images.unsplash.com/photo-1557396975-70d7485408de?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat}
+  #racing h2{color:#FFFFFF}
+  #racing .tag{color:var(--yellow)}
+  #racing .intro{color:#C9CCD1!important}
+  #racing .btn.ghost{color:#FFFFFF;outline-color:var(--yellow)}
   .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:44px}
   .post{background:var(--dark2);display:flex;flex-direction:column;border-top:4px solid var(--yellow);transition:.25s}
   .post:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
-  .post-img{height:170px;background:repeating-linear-gradient(115deg,#D6DADF 0 40px,#DFE2E6 40px 80px);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:2rem;color:var(--silver);border-bottom:2px solid var(--yellow)}
-  .post-img span{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;margin-top:6px}
+  .post-img{height:170px;overflow:hidden;border-bottom:2px solid var(--yellow)}
+  .post-img img{width:100%;height:100%;object-fit:cover;transition:.35s}
+  .post:hover .post-img img{transform:scale(1.07)}
   .post-body{padding:24px 24px 28px}
   .post-meta{color:#9A7B00;font-size:.75rem;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:10px}
   .post h3{font-size:1.05rem;margin-bottom:10px}
@@ -256,69 +276,81 @@
     <div class="grid">
       <div class="card">
         <span class="num">01</span>
-        <div class="icon">🛠️</div>
-        <h3>Revalve de Suspensión</h3>
-        <p>Modificamos internamente tu horquilla y amortiguador según tu peso, nivel y tipo de terreno. Setup personalizado, no genérico.</p>
-        <ul>
-          <li>Perfil de piloto personalizado</li>
-          <li>Pistones y shims a la medida</li>
-          <li>Pruebas y ajuste fino</li>
-        </ul>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1636761358756-ef34b4ef036a?q=80&w=800&auto=format&fit=crop" alt="Trabajo de precisión en suspensión" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Revalve de Suspensión</h3>
+          <p>Modificamos internamente tu horquilla y amortiguador según tu peso, nivel y tipo de terreno. Setup personalizado, no genérico.</p>
+          <ul>
+            <li>Perfil de piloto personalizado</li>
+            <li>Pistones y shims a la medida</li>
+            <li>Pruebas y ajuste fino</li>
+          </ul>
+        </div>
       </div>
       <div class="card">
         <span class="num">02</span>
-        <div class="icon">🔧</div>
-        <h3>Servicio de Suspensión</h3>
-        <p>Mantenimiento completo: cambio de aceite, sellos, bujes e inspección de componentes para que tu suspensión trabaje como nueva.</p>
-        <ul>
-          <li>Cambio de sellos y aceite</li>
-          <li>Inspección de barras y botellas</li>
-          <li>Ajuste de SAG y precarga</li>
-        </ul>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1636761358757-0a616eb9e17e?q=80&w=800&auto=format&fit=crop" alt="Mecánico dando servicio a una moto" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Servicio de Suspensión</h3>
+          <p>Mantenimiento completo: cambio de aceite, sellos, bujes e inspección de componentes para que tu suspensión trabaje como nueva.</p>
+          <ul>
+            <li>Cambio de sellos y aceite</li>
+            <li>Inspección de barras y botellas</li>
+            <li>Ajuste de SAG y precarga</li>
+          </ul>
+        </div>
       </div>
       <div class="card">
         <span class="num">03</span>
-        <div class="icon">🌀</div>
-        <h3>Resortes y Kits</h3>
-        <p>Conversión de resortes, kits para horquilla y ajuste de altura (ride height) según tu peso y estilo de manejo.</p>
-        <ul>
-          <li>Kit de conversión de resortes</li>
-          <li>Kits para horquilla</li>
-          <li>Modificación de altura</li>
-        </ul>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1630949821332-3beae5adc9e2?q=80&w=800&auto=format&fit=crop" alt="Moto de motocross en el desierto" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Resortes y Kits</h3>
+          <p>Conversión de resortes, kits para horquilla y ajuste de altura (ride height) según tu peso y estilo de manejo.</p>
+          <ul>
+            <li>Kit de conversión de resortes</li>
+            <li>Kits para horquilla</li>
+            <li>Modificación de altura</li>
+          </ul>
+        </div>
       </div>
       <div class="card">
         <span class="num">04</span>
-        <div class="icon">⚙️</div>
-        <h3>Servicio de Motor</h3>
-        <p>Reconstrucción y modificación de motor con piezas OEM o aftermarket, buscando el balance ideal entre potencia y durabilidad.</p>
-        <ul>
-          <li>Top-end y bottom-end</li>
-          <li>Mejoras de rendimiento</li>
-          <li>Diagnóstico completo</li>
-        </ul>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?q=80&w=800&auto=format&fit=crop" alt="Motor de motocicleta en reconstrucción" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Servicio de Motor</h3>
+          <p>Reconstrucción y modificación de motor con piezas OEM o aftermarket, buscando el balance ideal entre potencia y durabilidad.</p>
+          <ul>
+            <li>Top-end y bottom-end</li>
+            <li>Mejoras de rendimiento</li>
+            <li>Diagnóstico completo</li>
+          </ul>
+        </div>
       </div>
       <div class="card">
         <span class="num">05</span>
-        <div class="icon">🏍️</div>
-        <h3>Bike Build Completo</h3>
-        <p>Preparación total de tu moto desde el chasis: combinamos suspensión, motor y mantenimiento para entregarla lista para competir.</p>
-        <ul>
-          <li>Reconstrucción integral</li>
-          <li>Preparación pre-carrera</li>
-          <li>Mantenimiento programado</li>
-        </ul>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1604260324056-45f7c778754a?q=80&w=800&auto=format&fit=crop" alt="Moto en preparación dentro del taller" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Bike Build Completo</h3>
+          <p>Preparación total de tu moto desde el chasis: combinamos suspensión, motor y mantenimiento para entregarla lista para competir.</p>
+          <ul>
+            <li>Reconstrucción integral</li>
+            <li>Preparación pre-carrera</li>
+            <li>Mantenimiento programado</li>
+          </ul>
+        </div>
       </div>
       <div class="card">
         <span class="num">06</span>
-        <div class="icon">🏁</div>
-        <h3>Soporte en Pista</h3>
-        <p>Te acompañamos en carreras y eventos seleccionados con ajustes de suspensión y asistencia técnica directamente en la pista.</p>
-        <ul>
-          <li>Ajustes el día del evento</li>
-          <li>Asesoría de setup</li>
-          <li>Atención a pilotos y equipos</li>
-        </ul>
+        <div class="card-img"><img src="https://images.unsplash.com/photo-1692276597759-c05ca7e0c3c5?q=80&w=800&auto=format&fit=crop" alt="Pilotos compitiendo en pista de motocross" loading="lazy"></div>
+        <div class="card-body">
+          <h3>Soporte en Pista</h3>
+          <p>Te acompañamos en carreras y eventos seleccionados con ajustes de suspensión y asistencia técnica directamente en la pista.</p>
+          <ul>
+            <li>Ajustes el día del evento</li>
+            <li>Asesoría de setup</li>
+            <li>Atención a pilotos y equipos</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -373,14 +405,22 @@
   </div>
 </section>
 
+<section class="desert">
+  <div class="wrap">
+    <span class="tag">Mexicali · Baja California · México</span>
+    <h2>Forjados en el desierto</h2>
+    <p>Arena, piedra, dunas y el calor de la capital de Baja California. Aquí no hay terreno fácil — por eso cada suspensión que sale de KLIKS está probada para aguantar lo más duro del off-road bajacaliforniano.</p>
+  </div>
+</section>
+
 <section id="racing">
   <div class="wrap">
     <span class="tag">Racing</span>
     <h2 style="font-size:2.2rem;margin-top:10px">Blog de carreras KLIKS Racing</h2>
-    <p style="color:var(--silver);max-width:680px;margin-top:14px">Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.</p>
+    <p class="intro" style="max-width:680px;margin-top:14px">Vivimos las carreras desde adentro. Aquí publicamos las crónicas de cada fecha: resultados de nuestros pilotos, setups que funcionaron, fotos del evento y lo que aprendimos en la pista.</p>
     <div class="blog-grid">
       <article class="post">
-        <div class="post-img">📸<span>Foto de la carrera</span></div>
+        <div class="post-img"><img src="https://images.unsplash.com/photo-1542550546-88afdd84b64f?q=80&w=800&auto=format&fit=crop" alt="Piloto de motocross en salto" loading="lazy"></div>
         <div class="post-body">
           <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
           <h3>[Título de la crónica de carrera]</h3>
@@ -389,7 +429,7 @@
         </div>
       </article>
       <article class="post">
-        <div class="post-img">📸<span>Foto de la carrera</span></div>
+        <div class="post-img"><img src="https://images.unsplash.com/photo-1596493505147-8fbb92e394e8?q=80&w=800&auto=format&fit=crop" alt="Piloto de motocross en competencia" loading="lazy"></div>
         <div class="post-body">
           <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
           <h3>[Título de la crónica de carrera]</h3>
@@ -398,7 +438,7 @@
         </div>
       </article>
       <article class="post">
-        <div class="post-img">📸<span>Foto de la carrera</span></div>
+        <div class="post-img"><img src="https://images.unsplash.com/photo-1445605081472-9788fb3bc02f?q=80&w=800&auto=format&fit=crop" alt="Salto de motocross en plena carrera" loading="lazy"></div>
         <div class="post-body">
           <div class="post-meta">[Fecha] · [Pista / Ciudad]</div>
           <h3>[Título de la crónica de carrera]</h3>
@@ -433,90 +473,4 @@
       </div>
       <div class="t-card">
         <div class="stars">★★★★★</div>
-        <p>"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó perfecta."</p>
-        <div class="who">[Nombre del piloto]</div>
-        <div class="what">Off-Road — Experto</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contacto">
-  <div class="wrap">
-    <span class="tag">Contacto</span>
-    <h2 style="font-size:2.2rem;margin-top:10px">Agenda tu servicio</h2>
-    <div class="contact-grid">
-      <div class="c-info">
-        <div><b>Teléfono / WhatsApp</b><a href="tel:+526862765484">(686) 276-5484</a></div>
-        <div><b>Correo</b><a href="mailto:kliks.suspension@gmail.com">kliks.suspension@gmail.com</a></div>
-        <div><b>Dirección</b>Mexicali, Baja California, México</div>
-        <div><b>Horario</b>Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00</div>
-        <div class="social">
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="YouTube">YT</a>
-          <a href="#" aria-label="TikTok">TT</a>
-        </div>
-      </div>
-      <form onsubmit="event.preventDefault();alert('¡Gracias! Te contactaremos pronto. (Conectar al backend o servicio de formularios)');">
-        <div class="field"><label>Nombre</label><input type="text" required placeholder="Tu nombre"></div>
-        <div class="field"><label>Teléfono o correo</label><input type="text" required placeholder="¿Cómo te contactamos?"></div>
-        <div class="field"><label>Moto (marca / modelo / año)</label><input type="text" placeholder="Ej. KTM 250 SX-F 2023"></div>
-        <div class="field"><label>Servicio</label>
-          <select>
-            <option>Revalve de suspensión</option>
-            <option>Servicio de suspensión</option>
-            <option>Resortes / kits / ride height</option>
-            <option>Servicio de motor</option>
-            <option>Bike build completo</option>
-            <option>Soporte en pista</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="field"><label>Mensaje</label><textarea rows="4" placeholder="Cuéntanos qué sientes en tu moto..."></textarea></div>
-        <button class="btn" type="submit">Enviar</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="f-grid">
-      <div>
-        <img src="logo.png" alt="KLIKS Suspension" style="height:64px;width:auto;border-radius:8px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <svg viewBox="0 0 430 100" width="180" height="42" aria-label="KLIKS Suspension" style="display:none"><use href="#kliks-lockup"/></svg>
-        <p style="margin-top:14px;max-width:340px">Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.</p>
-        <p style="margin-top:10px">Mexicali, Baja California, México · <a href="tel:+526862765484" style="color:var(--yellow)">(686) 276-5484</a></p>
-      </div>
-      <div>
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="#servicios">Revalve de suspensión</a></li>
-          <li><a href="#servicios">Servicio de suspensión</a></li>
-          <li><a href="#servicios">Servicio de motor</a></li>
-          <li><a href="#servicios">Bike build completo</a></li>
-          <li><a href="#servicios">Soporte en pista</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Enlaces</h4>
-        <ul>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#racing">Racing / Blog</a></li>
-          <li><a href="#proceso">Cómo trabajamos</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copy">© 2026 KLIKS Suspension. Todos los derechos reservados.</div>
-  </div>
-</footer>
-
-<script>
-  // cerrar menú móvil al hacer clic en un enlace
-  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
-</script>
-</body>
-</html>
+        <p>"El soporte en pista hizo la diferencia el día de la carrera. Dos cliks de ajuste entre mangas y la moto quedó
