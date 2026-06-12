@@ -37,7 +37,9 @@
 
   .topbar{background:var(--yellow);color:var(--black);font-weight:700;font-size:.85rem;text-align:center;padding:6px 12px}
 
-  header{position:sticky;top:0;z-index:50;background:rgba(14,15,18,.92);backdrop-filter:blur(10px);border-bottom:2px solid var(--yellow)}
+  header{position:sticky;top:0;z-index:50;background:rgba(14,15,18,.92);backdrop-filter:blur(10px);border-bottom:2px solid var(--yellow);overflow:hidden}
+  header::before{content:"";position:absolute;top:0;right:0;bottom:0;width:46%;max-width:520px;pointer-events:none;opacity:.15;background:url("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 100' preserveAspectRatio='xMaxYMid meet'%3E%3Cg fill='%23FFD200'%3E%3Cpath d='M30 92 L150 12 L176 12 L56 92 Z'/%3E%3Cpath d='M92 92 L228 12 L250 12 L114 92 Z'/%3E%3Cpath d='M160 92 L300 12 L318 12 L178 92 Z'/%3E%3Cpath d='M232 92 L320 30 L320 48 L250 92 Z'/%3E%3C/g%3E%3C/svg%3E") right center/auto 150% no-repeat;z-index:0}
+  header .nav{position:relative;z-index:1}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto}
   .logo{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase}
   .logo span{color:var(--yellow)}
@@ -389,7 +391,7 @@
       </div>
       <div class="card">
         <span class="num">02</span>
-        <div class="card-img"><img src="race-3.jpg" alt="Moto KLIKS lista tras el servicio de suspensión" loading="lazy"></div>
+        <div class="card-img"><img src="kliks-fork.jpg" alt="Horquilla KLIKS en una moto off-road" loading="lazy"></div>
         <div class="card-body">
           <h3 data-i18n="card2_h3">Servicio de Suspensión</h3>
           <p data-i18n="card2_p">Mantenimiento a fondo para que la suspensión no pierda el punto: aceite y sellos nuevos, revisión de bujes y todo medido y listo para tu próxima salida.</p>
