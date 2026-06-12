@@ -228,7 +228,10 @@
   /* ===== TEMA OSCURO ROCKSTAR MX ===== */
   body{color:#E7E9EC}
   h1,h2,h3{color:#F4F5F6}
-  .t-card,.t-feature,.race-feature,.race-gallery figure{background:#1B1E23}
+  .t-card,.t-feature,.race-feature,.race-gallery figure,.step{background:#1B1E23}
+  .step::before{color:var(--yellow-dark)}
+  .step h3{color:#F4F5F6}
+  .step p{color:#B9BEC4}
   .card h3,.race-feature .rf-body h3,.srf-block>h4,.srf-opt>span,.srf-inline{color:#F2F3F5}
   .card p,.t-card p,.t-feature .tf-body p,.post p,.race-feature .rf-body p,.race-gallery figcaption{color:#B9BEC4}
   .post-meta,.c-info b,footer h4,.social a,.t-card .who,.t-feature .who,.srf-srv-col h5,.post .more,.post:hover .more,.badge-box .row div span{color:var(--yellow-dark)}
@@ -249,7 +252,10 @@
   body{background-color:var(--bg);background-image:var(--bolttex)}
   .process,.testi,footer{background-color:#15171B;background-image:var(--bolttex)}
   /* ---- Amarillo hueso en hoja de servicio y contacto ---- */
-  #contacto{background:#E9E1CD;border-top:5px solid var(--yellow)}
+  #contacto{background:#E9E1CD;border-top:5px solid var(--yellow);color:#2B2B22}
+  #contacto .c-info div,#contacto .c-info span,#contacto .c-info a{color:#2B2B22}
+  #contacto .social a{border-color:#B79A3D;color:#6B5600}
+  #contacto .social a:hover{background:var(--yellow);color:var(--black)}
   #contacto h2,#contacto p,#contacto .srf-block>h4,#contacto .srf-opt>span,#contacto .srf-inline{color:#1A1A16}
   #contacto label,#contacto .srf-legal{color:#6B6450}
   #contacto .tag,#contacto .c-info b,#contacto .srf-srv-col h5{color:#9A7B00}
@@ -1136,7 +1142,4 @@
       col_shock:'Shock: Rebuild or Revalve', sh_spring:'Spring', sh_seals:'Seals', sh_bushing:'Bushing', sh_bumper:'Bottom-Out Bumper', sh_lowering:'Lowering <em>(lower height)</em>',
       susp_notes_h:'What should we know before working on your suspension?', susp_notes_ph:'How does the bike feel? Does it bottom out, kick, feel harsh or soft? Tell us everything.',
       srf_note:'<strong>Packing:</strong> ship your components in a sturdy, well-padded box. Skip gun-style cases —carriers will not cover damage and they are an easy theft target. Not sure how to pack? Message us before you ship.',
-      srf_legal:'By submitting this request you authorize KLIKS Suspension to perform the described work with the necessary materials and to test the components to verify they function. We confirm the final cost with you before we start.',
-      srf_submit:'Submit request', srf_paynote:'Payment is arranged by phone/WhatsApp — we do not collect card details online.',
-      f_tshirt:'T-shirt size', col_valves:'Valves & seats',
-      v_3angle:'Valve Job 3-angle <em>standard</em>', v_5angle:'Valve Job 5-angle <em>performance</
+      srf_legal:'By submitting this request you authorize KLIKS Suspension to perform the described work with the necessary materials and to test the components to verify they function. We confirm the fin
