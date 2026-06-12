@@ -38,10 +38,8 @@
   .topbar{background:var(--yellow);color:var(--black);font-weight:700;font-size:.85rem;text-align:center;padding:6px 12px}
 
   header{position:sticky;top:0;z-index:50;background:rgba(14,15,18,.92);backdrop-filter:blur(10px);border-bottom:2px solid var(--yellow);overflow:hidden}
-  header::before{content:"";position:absolute;top:0;right:0;bottom:0;width:55%;max-width:620px;pointer-events:none;opacity:.14;background:url("%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 100' preserveAspectRatio='xMaxYMid meet'%3E%3Cg fill='%23FFD200'%3E%3Cpath d='M30 92 L150 12 L176 12 L56 92 Z'/%3E%3Cpath d='M92 92 L228 12 L250 12 L114 92 Z'/%3E%3Cpath d='M160 92 L300 12 L318 12 L178 92 Z'/%3E%3Cpath d='M232 92 L320 30 L320 48 L250 92 Z'/%3E%3C/g%3E%3C/svg%3E") right center/auto 150% no-repeat;z-index:0}
+  header::before{content:"";position:absolute;inset:-30px;pointer-events:none;opacity:.5;filter:blur(9px);mix-blend-mode:screen;background:url('thunder.jpg') center/cover no-repeat;z-index:0}
   header .nav{position:relative;z-index:1}
-  .hdr-slash{flex:none;height:34px;width:auto;margin:0 14px;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
-  @media(max-width:860px){.hdr-slash{display:none}}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max);margin:0 auto}
   .logo{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase}
   .logo span{color:var(--yellow)}
@@ -58,7 +56,7 @@
     linear-gradient(100deg,rgba(10,10,13,.92) 25%,rgba(10,10,13,.55) 60%,rgba(255,210,0,.12)),
     url('https://images.unsplash.com/photo-1628996796796-bcd82e0899d4?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat}
   .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--yellow) 60%,transparent);z-index:3}
-  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.55;mix-blend-mode:screen;background:url('thunder.jpg') center/cover no-repeat}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;display:none}
   .hero .wrap,.hero-grid{position:relative;z-index:2}
   /* ---- Acento de rayo en los títulos de sección ---- */
   .tag::before{content:"";display:inline-block;width:.62em;height:.95em;margin-right:7px;vertical-align:-1px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 2L4 14h7l-2 8 11-13h-7l3-7z' fill='%23FFD200'/%3E%3C/svg%3E") center/contain no-repeat}
@@ -274,6 +272,12 @@
   #contacto .srf-choices input:checked + span{background:var(--yellow);border-color:var(--yellow-dark);color:var(--black)}
   #contacto .srf-opt{border-bottom-color:#DCD3BC}
   #contacto .srf-note{background:#FBF3D2;border-color:var(--yellow-dark);color:#5B4B00}
+  /* Logo de portada como marca de agua diagonal difuminada */
+  .hero-grid{grid-template-columns:1fr}
+  .hero .wrap{position:relative;z-index:2}
+  .hero-art{position:absolute;right:-30px;bottom:-50px;width:58%;max-width:600px;margin:0;transform:rotate(-13deg);opacity:.17;filter:blur(1.3px);z-index:0;pointer-events:none}
+  .hero-art img{max-width:100%;margin:0;filter:none}
+  @media(max-width:860px){.hero-art{width:90%;right:-40px;bottom:auto;top:40%;opacity:.12}}
 </style>
 </head>
 <body>
@@ -337,7 +341,6 @@
       <img class="logo-img" src="logo.png" alt="KLIKS Suspension" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <svg class="logo-svg" viewBox="0 0 430 100" width="206" height="48" style="display:none"><use href="#kliks-lockup"/></svg>
     </a>
-    <svg class="hdr-slash" viewBox="0 0 140 40" aria-hidden="true"><g fill="#FFD200"><path d="M6 36 L52 4 L70 4 L24 36 Z"/><path d="M40 36 L92 4 L108 4 L56 36 Z"/><path d="M78 36 L124 4 L140 4 L94 36 Z"/></g></svg>
     <nav>
       <button class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
       <ul id="menu">
