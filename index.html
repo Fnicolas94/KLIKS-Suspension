@@ -18,6 +18,7 @@
     --dark2:#1B1E23;
     --silver:#A6ACB4;
     --white:#15171A;
+    --bolttex:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg fill='%2320242C'%3E%3Cpath transform='translate(18 10) scale(2.4)' d='M13 2L4 14h7l-2 8 11-13h-7l3-7z'/%3E%3Cpath transform='translate(106 66) scale(1.7)' d='M13 2L4 14h7l-2 8 11-13h-7l3-7z'/%3E%3Cpath transform='translate(58 104) scale(2)' d='M13 2L4 14h7l-2 8 11-13h-7l3-7z'/%3E%3C/g%3E%3C/svg%3E");
     --max:1180px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -51,7 +52,7 @@
 
   .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;background:
     linear-gradient(100deg,rgba(10,10,13,.92) 25%,rgba(10,10,13,.55) 60%,rgba(255,210,0,.12)),
-    url('race-4.jpg') center/cover no-repeat}
+    url('kliks-jump.jpg') center 30%/cover no-repeat}
   .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:8px;background:linear-gradient(90deg,var(--yellow) 60%,transparent);z-index:3}
   .hero::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.9;mix-blend-mode:screen;background:url('thunder.jpg') center/cover no-repeat}
   .hero .wrap,.hero-grid{position:relative;z-index:2}
@@ -102,7 +103,7 @@
   .badge-box .row div span{font-size:1.8rem;font-weight:900;color:#9A7B00;display:block;font-style:italic}
   .badge-box .row div small{color:var(--silver);text-transform:uppercase;letter-spacing:1px;font-size:.7rem}
 
-  .desert{background:linear-gradient(rgba(14,11,7,.58),rgba(14,11,7,.74)),url('race-3.jpg') center/cover no-repeat fixed;text-align:center;padding:130px 0;border-top:6px solid var(--yellow);border-bottom:6px solid var(--yellow)}
+  .desert{background:linear-gradient(rgba(14,11,7,.58),rgba(14,11,7,.74)),url('race-4.jpg') center/cover no-repeat fixed;text-align:center;padding:130px 0;border-top:6px solid var(--yellow);border-bottom:6px solid var(--yellow)}
   .desert .tag{color:var(--yellow)}
   .desert h2{color:#FFFFFF;font-size:clamp(1.8rem,4vw,3rem);margin-top:12px;text-shadow:0 4px 18px rgba(0,0,0,.6)}
   .desert p{color:#EFE9DD;max-width:680px;margin:18px auto 0;font-size:1.15rem;text-shadow:0 2px 8px rgba(0,0,0,.5)}
@@ -244,6 +245,25 @@
   .card:hover,.post:hover{box-shadow:0 14px 32px rgba(0,0,0,.55)}
   .t-feature{box-shadow:0 10px 30px rgba(0,0,0,.45)}
   .card::before{opacity:.16}
+  /* ---- Textura de rayos en gris oscuro sobre los negros ---- */
+  body{background-color:var(--bg);background-image:var(--bolttex)}
+  .process,.testi,footer{background-color:#15171B;background-image:var(--bolttex)}
+  /* ---- Amarillo hueso en hoja de servicio y contacto ---- */
+  #contacto{background:#E9E1CD}
+  #contacto h2,#contacto p,#contacto .srf-block>h4,#contacto .srf-opt>span,#contacto .srf-inline{color:#1A1A16}
+  #contacto label,#contacto .srf-legal{color:#6B6450}
+  #contacto .tag,#contacto .c-info b,#contacto .srf-srv-col h5{color:#9A7B00}
+  #contacto .c-info a{color:#1A1A16}
+  #contacto input,#contacto select,#contacto textarea{background:#FBF8EF;border-color:#CFC6AE;color:#1A1A16}
+  #contacto .srf-tab{background:#F1EBD9;border-color:#CFC6AE;color:#736B54}
+  #contacto .srf-tab small{color:#8A8068}
+  #contacto .srf-tab.active{background:var(--black);color:var(--yellow)}
+  #contacto .srf-tab.active small{color:#C9CDD3}
+  #contacto .srf-panel{background:#F5F0E2;border-color:#DCD3BC}
+  #contacto .srf-choices label span{background:#FBF8EF;border-color:#CFC6AE;color:#736B54}
+  #contacto .srf-choices input:checked + span{background:var(--yellow);border-color:var(--yellow-dark);color:var(--black)}
+  #contacto .srf-opt{border-bottom-color:#DCD3BC}
+  #contacto .srf-note{background:#FBF3D2;border-color:var(--yellow-dark);color:#5B4B00}
 </style>
 </head>
 <body>
@@ -1119,18 +1139,4 @@
       srf_legal:'By submitting this request you authorize KLIKS Suspension to perform the described work with the necessary materials and to test the components to verify they function. We confirm the final cost with you before we start.',
       srf_submit:'Submit request', srf_paynote:'Payment is arranged by phone/WhatsApp — we do not collect card details online.',
       f_tshirt:'T-shirt size', col_valves:'Valves & seats',
-      v_3angle:'Valve Job 3-angle <em>standard</em>', v_5angle:'Valve Job 5-angle <em>performance</em>', v_seats:'Seat install <em>requires valve job</em>', v_guides:'Guide install <em>requires valve job</em>', v_refacing:'Valve refacing', v_backcut:'Backcutting <em>(some models)</em>', v_guidehone:'Guide honing',
-      col_perf:'Performance extras <em style="font-style:normal;color:var(--silver);font-size:.72rem">(some models)</em>', p_customvalves:'Custom valves', p_cp:'CP piston set', p_vortex:'Vortex ECU', p_vortexmap:'Vortex ECU — custom mapping', p_fmfpipe:'FMF Pipe / Header', p_fmfsil:'FMF Silencer / Muffler',
-      col_cyl:'Cylinder & head', c_pocket:'Pocket Porting', c_full:'Full Porting <em>hi-performance</em>', c_epoxy:'Epoxy Porting <em>(some models)</em>', c_headdeck:'Head Decking', c_cyldeck:'Cylinder Decking', c_headrebuild:'Cylinder head rebuild', c_boring:'Cylinder boring', c_honing:'Cylinder honing',
-      col_other:'Other services', o_crank:'Crank rebuild & truing', o_other:'Other service',
-      block_notes:'Notes', motor_notes_ph:'Tell us any important engine detail or what you want to achieve.',
-      foot_about:'Suspension and service shop for motocross, enduro and off-road. Precision in every click.', foot_services_h:'Services', foot_links_h:'Links', foot_l_racing:'Racing / Blog', foot_l_process:'How we work',
-      copy:'© 2026 KLIKS Suspension. All rights reserved.',
-      st_sending:'Sending...', st_ok:'Message sent! We will contact you soon.', st_err:'There was an error sending. Try again or call us at (686) 276-5484.',
-      srf_sending:'Sending request...', srf_ok:'Request sent! We will contact you soon to confirm your service.', srf_err:'There was an error sending. Try again or call us at (686) 276-5484.'
-    }
-  };
-
-  const CHOICE = { es:{'Sí':'Sí','No':'No','Si req.':'Si req.'}, en:{'Sí':'Yes','No':'No','Si req.':'If req.'} };
-  let cur = 'es';
-  try { const saved = localStorage.getItem('kliks_lang'); if (saved === 'es' || saved === 'en')
+      v_3angle:'Valve Job 3-angle <em>standard</em>', v_5angle:'Valve Job 5-angle <em>performance</em>', v_seats:'Seat install <em>requires valve job</em>', v_guides:'Guide install <em>requires valve job</em>
