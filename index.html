@@ -389,7 +389,7 @@
       </div>
       <div class="card">
         <span class="num">02</span>
-        <div class="card-img"><img src="race-5.jpg" alt="Moto de cross en el taller KLIKS para servicio de suspensión" loading="lazy"></div>
+        <div class="card-img"><img src="race-3.jpg" alt="Moto KLIKS lista tras el servicio de suspensión" loading="lazy"></div>
         <div class="card-body">
           <h3 data-i18n="card2_h3">Servicio de Suspensión</h3>
           <p data-i18n="card2_p">Mantenimiento a fondo para que la suspensión no pierda el punto: aceite y sellos nuevos, revisión de bujes y todo medido y listo para tu próxima salida.</p>
@@ -1142,4 +1142,92 @@
       col_shock:'Shock: Rebuild or Revalve', sh_spring:'Spring', sh_seals:'Seals', sh_bushing:'Bushing', sh_bumper:'Bottom-Out Bumper', sh_lowering:'Lowering <em>(lower height)</em>',
       susp_notes_h:'What should we know before working on your suspension?', susp_notes_ph:'How does the bike feel? Does it bottom out, kick, feel harsh or soft? Tell us everything.',
       srf_note:'<strong>Packing:</strong> ship your components in a sturdy, well-padded box. Skip gun-style cases —carriers will not cover damage and they are an easy theft target. Not sure how to pack? Message us before you ship.',
-      srf_legal:'By submitting this request you authorize KLIKS Suspension to perform the described work with the necessary materials and to test the components to verify they function. We confirm the fin
+      srf_legal:'By submitting this request you authorize KLIKS Suspension to perform the described work with the necessary materials and to test the components to verify they function. We confirm the final cost with you before we start.',
+      srf_submit:'Submit request', srf_paynote:'Payment is arranged by phone/WhatsApp — we do not collect card details online.',
+      f_tshirt:'T-shirt size', col_valves:'Valves & seats',
+      v_3angle:'Valve Job 3-angle <em>standard</em>', v_5angle:'Valve Job 5-angle <em>performance</em>', v_seats:'Seat install <em>requires valve job</em>', v_guides:'Guide install <em>requires valve job</em>', v_refacing:'Valve refacing', v_backcut:'Backcutting <em>(some models)</em>', v_guidehone:'Guide honing',
+      col_perf:'Performance extras <em style="font-style:normal;color:var(--silver);font-size:.72rem">(some models)</em>', p_customvalves:'Custom valves', p_cp:'CP piston set', p_vortex:'Vortex ECU', p_vortexmap:'Vortex ECU — custom mapping', p_fmfpipe:'FMF Pipe / Header', p_fmfsil:'FMF Silencer / Muffler',
+      col_cyl:'Cylinder & head', c_pocket:'Pocket Porting', c_full:'Full Porting <em>hi-performance</em>', c_epoxy:'Epoxy Porting <em>(some models)</em>', c_headdeck:'Head Decking', c_cyldeck:'Cylinder Decking', c_headrebuild:'Cylinder head rebuild', c_boring:'Cylinder boring', c_honing:'Cylinder honing',
+      col_other:'Other services', o_crank:'Crank rebuild & truing', o_other:'Other service',
+      block_notes:'Notes', motor_notes_ph:'Tell us any important engine detail or what you want to achieve.',
+      foot_about:'Suspension and service shop for motocross, enduro and off-road. Precision in every click.', foot_services_h:'Services', foot_links_h:'Links', foot_l_racing:'Racing / Blog', foot_l_process:'How we work',
+      copy:'© 2026 KLIKS Suspension. All rights reserved.',
+      st_sending:'Sending...', st_ok:'Message sent! We will contact you soon.', st_err:'There was an error sending. Try again or call us at (686) 276-5484.',
+      srf_sending:'Sending request...', srf_ok:'Request sent! We will contact you soon to confirm your service.', srf_err:'There was an error sending. Try again or call us at (686) 276-5484.'
+    }
+  };
+
+  const CHOICE = { es:{'Sí':'Sí','No':'No','Si req.':'Si req.'}, en:{'Sí':'Yes','No':'No','Si req.':'If req.'} };
+  let cur = 'es';
+  try { const saved = localStorage.getItem('kliks_lang'); if (saved === 'es' || saved === 'en') cur = saved; } catch(e){}
+
+  function applyLang(lang){
+    cur = lang;
+    const d = T[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(d[k]!==undefined) el.textContent=d[k]; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{ const k=el.getAttribute('data-i18n-html'); if(d[k]!==undefined) el.innerHTML=d[k]; });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k=el.getAttribute('data-i18n-ph'); if(d[k]!==undefined) el.setAttribute('placeholder',d[k]); });
+    document.querySelectorAll('.srf-choices input').forEach(inp=>{ const span=inp.nextElementSibling; if(span && CHOICE[lang][inp.value]) span.textContent=CHOICE[lang][inp.value]; });
+    const btn=document.getElementById('langBtn'); if(btn) btn.textContent = lang==='es' ? 'EN' : 'ES';
+    try{ localStorage.setItem('kliks_lang',lang); }catch(e){}
+  }
+
+  document.getElementById('langBtn').addEventListener('click',()=>applyLang(cur==='es'?'en':'es'));
+  applyLang(cur);
+
+  // cerrar menú móvil al hacer clic en un enlace
+  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  // envío del formulario rápido a Formspree
+  document.getElementById('contact-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    status.style.color = '#565C64';
+    status.textContent = T[cur].st_sending;
+    try {
+      const r = await fetch(this.action, {method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}});
+      if (r.ok) { status.style.color = '#1B7A3D'; status.textContent = T[cur].st_ok; this.reset(); }
+      else { throw new Error(); }
+    } catch (err) { status.style.color = '#B3261E'; status.textContent = T[cur].st_err; }
+  });
+
+  // ===== Solicitud de servicio detallada: tabs =====
+  document.querySelectorAll('.srf-tab').forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      const key = tab.dataset.srf;
+      document.querySelectorAll('.srf-tab').forEach(t=>t.classList.toggle('active', t===tab));
+      document.querySelectorAll('.srf-panel').forEach(p=>p.classList.toggle('active', p.id==='srf-panel-'+key));
+    });
+  });
+
+  // ===== Envío de los formularios detallados a Formspree =====
+  document.querySelectorAll('.srf-form').forEach(form=>{
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      const status = this.querySelector('.srf-status');
+      status.style.color = '#565C64';
+      status.textContent = T[cur].srf_sending;
+      try {
+        const r = await fetch(this.action, {method:'POST', body:new FormData(this), headers:{'Accept':'application/json'}});
+        if (r.ok) { status.style.color = '#1B7A3D'; status.textContent = T[cur].srf_ok; this.reset(); }
+        else { throw new Error(); }
+      } catch (err) { status.style.color = '#B3261E'; status.textContent = T[cur].srf_err; }
+    });
+  });
+
+  // ===== Lightbox de la galería Racing =====
+  (function(){
+    const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg');
+    if(!lb) return;
+    document.querySelectorAll('.race-gallery img').forEach(img=>{
+      img.addEventListener('click',()=>{ lbImg.src=img.getAttribute('data-full')||img.src; lb.classList.add('open'); });
+    });
+    function closeLb(){ lb.classList.remove('open'); lbImg.src=''; }
+    document.getElementById('lbClose').addEventListener('click',closeLb);
+    lb.addEventListener('click',e=>{ if(e.target===lb) closeLb(); });
+    document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLb(); });
+  })();
+</script>
+</body>
+</html>
