@@ -658,7 +658,7 @@
             <div class="srf-grid cols-3">
               <div class="field"><label data-i18n="f_name">Nombre *</label><input type="text" name="Nombre" required></div>
               <div class="field"><label data-i18n="f_phone">Teléfono / WhatsApp *</label><input type="tel" name="Teléfono" required></div>
-              <div class="field"><label data-i18n="f_email">Correo</label><input type="email" name="Email"></div>
+              <div class="field"><label data-i18n="f_email">Correo</label><input type="email" name="Email" required></div>
               <div class="field"><label data-i18n="f_addr">Dirección</label><input type="text" name="Dirección"></div>
               <div class="field"><label data-i18n="f_city">Ciudad</label><input type="text" name="Ciudad"></div>
               <div class="field"><label data-i18n="f_state">Estado / CP</label><input type="text" name="Estado y CP"></div>
@@ -681,9 +681,9 @@
           <div class="srf-block">
             <h4 data-i18n="block_bike">Tu moto</h4>
             <div class="srf-grid cols-4">
-              <div class="field"><label data-i18n="f_year">Año</label><input type="text" name="Año"></div>
-              <div class="field"><label data-i18n="f_make">Marca</label><input type="text" name="Marca" placeholder="KTM, Yamaha…"></div>
-              <div class="field"><label data-i18n="f_model">Modelo</label><input type="text" name="Modelo" placeholder="250 SX-F"></div>
+              <div class="field"><label data-i18n="f_year">Año</label><input type="text" name="Año" required></div>
+              <div class="field"><label data-i18n="f_make">Marca</label><input type="text" name="Marca" placeholder="KTM, Yamaha…" required></div>
+              <div class="field"><label data-i18n="f_model">Modelo</label><input type="text" name="Modelo" placeholder="250 SX-F" required></div>
               <div class="field"><label data-i18n="f_vin">VIN (últimos 4)</label><input type="text" name="VIN (últimos 4)" maxlength="4"></div>
             </div>
           </div>
@@ -800,7 +800,7 @@
             <div class="srf-grid cols-3">
               <div class="field"><label data-i18n="f_name">Nombre *</label><input type="text" name="Nombre" required></div>
               <div class="field"><label data-i18n="f_phone">Teléfono / WhatsApp *</label><input type="tel" name="Teléfono" required></div>
-              <div class="field"><label data-i18n="f_email">Correo</label><input type="email" name="Email"></div>
+              <div class="field"><label data-i18n="f_email">Correo</label><input type="email" name="Email" required></div>
               <div class="field"><label data-i18n="f_addr">Dirección</label><input type="text" name="Dirección"></div>
               <div class="field"><label data-i18n="f_city">Ciudad</label><input type="text" name="Ciudad"></div>
               <div class="field"><label data-i18n="f_state">Estado / CP</label><input type="text" name="Estado y CP"></div>
@@ -823,9 +823,9 @@
           <div class="srf-block">
             <h4 data-i18n="block_bike">Tu moto</h4>
             <div class="srf-grid cols-4">
-              <div class="field"><label data-i18n="f_year">Año</label><input type="text" name="Año"></div>
-              <div class="field"><label data-i18n="f_make">Marca</label><input type="text" name="Marca" placeholder="KTM, Yamaha…"></div>
-              <div class="field"><label data-i18n="f_model">Modelo</label><input type="text" name="Modelo" placeholder="250 SX-F"></div>
+              <div class="field"><label data-i18n="f_year">Año</label><input type="text" name="Año" required></div>
+              <div class="field"><label data-i18n="f_make">Marca</label><input type="text" name="Marca" placeholder="KTM, Yamaha…" required></div>
+              <div class="field"><label data-i18n="f_model">Modelo</label><input type="text" name="Modelo" placeholder="250 SX-F" required></div>
               <div class="field"><label data-i18n="f_vin">VIN (últimos 4)</label><input type="text" name="VIN (últimos 4)" maxlength="4"></div>
             </div>
             <div class="srf-grid cols-3" style="margin-top:14px">
@@ -1094,7 +1094,7 @@
       foot_about:'Taller de suspensión y servicio para motocross, enduro y off-road. Precisión en cada clik.', foot_services_h:'Servicios', foot_links_h:'Enlaces', foot_l_racing:'Racing / Blog', foot_l_process:'Cómo trabajamos',
       copy:'© 2026 KLIKS Suspension. Todos los derechos reservados.',
       st_sending:'Enviando...', st_ok:'¡Mensaje enviado! Te contactamos pronto.', st_err:'Hubo un error al enviar. Intenta de nuevo o márcanos al (686) 276-5484.',
-      srf_sending:'Enviando solicitud...', srf_ok:'¡Solicitud enviada! Te contactamos pronto para confirmar tu servicio.', srf_err:'Hubo un error al enviar. Intenta de nuevo o márcanos al (686) 276-5484.'
+      srf_need_service:'Selecciona al menos un servicio (Sí o Si req.) antes de enviar.', srf_sending:'Enviando solicitud...', srf_ok:'¡Solicitud enviada! Te contactamos pronto para confirmar tu servicio.', srf_err:'Hubo un error al enviar. Intenta de nuevo o márcanos al (686) 276-5484.'
     },
     en: {
       topbar:'⚡ Book your service today — Call us: <a href="tel:+526862765484" style="color:inherit;font-weight:800">(686) 276-5484</a> · Mexicali, B.C.',
@@ -1167,7 +1167,7 @@
       foot_about:'Suspension and service shop for motocross, enduro and off-road. Precision in every click.', foot_services_h:'Services', foot_links_h:'Links', foot_l_racing:'Racing / Blog', foot_l_process:'How we work',
       copy:'© 2026 KLIKS Suspension. All rights reserved.',
       st_sending:'Sending...', st_ok:'Message sent! We will contact you soon.', st_err:'There was an error sending. Try again or call us at (686) 276-5484.',
-      srf_sending:'Sending request...', srf_ok:'Request sent! We will contact you soon to confirm your service.', srf_err:'There was an error sending. Try again or call us at (686) 276-5484.'
+      srf_need_service:'Please select at least one service (Yes or If needed) before submitting.', srf_sending:'Sending request...', srf_ok:'Request sent! We will contact you soon to confirm your service.', srf_err:'There was an error sending. Try again or call us at (686) 276-5484.'
     }
   };
 
@@ -1222,6 +1222,8 @@
       e.preventDefault();
       if(!this.checkValidity()){ this.reportValidity(); return; }
       const status = this.querySelector('.srf-status');
+      var svcSel=[].slice.call(this.querySelectorAll('.srf-services input[type=radio]:checked')).filter(function(r){return r.value!=='No';});
+      if(svcSel.length===0){ status.style.color='#B3261E'; status.textContent=T[cur].srf_need_service; var sv=this.querySelector('.srf-services'); if(sv) sv.scrollIntoView({behavior:'smooth',block:'center'}); return; }
       status.style.color = '#565C64';
       status.textContent = T[cur].srf_sending;
       try {
