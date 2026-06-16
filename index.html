@@ -619,7 +619,8 @@
         <div class="field"><label data-i18n="qf_contact">Teléfono o correo</label><input type="text" name="contacto" required placeholder="¿Cómo te contactamos?" data-i18n-ph="qf_contact_ph"></div>
         <div class="field"><label data-i18n="qf_bike">Moto (marca / modelo / año)</label><input type="text" name="moto" placeholder="Ej. KTM 250 SX-F 2023" data-i18n-ph="qf_bike_ph"></div>
         <div class="field"><label data-i18n="qf_service">Servicio</label>
-          <select name="servicio">
+          <select name="servicio" required>
+            <option value="" disabled selected data-i18n="qf_o0">— Selecciona un servicio —</option>
             <option value="Revalve de suspensión" data-i18n="qf_o1">Revalve de suspensión</option>
             <option value="Servicio de suspensión" data-i18n="qf_o2">Servicio de suspensión</option>
             <option value="Resortes / kits / ride height" data-i18n="qf_o3">Resortes / kits / ride height</option>
@@ -1068,7 +1069,7 @@
       contact_tag:'Contacto', contact_h2:'Agenda tu servicio',
       ci_phone:'Teléfono / WhatsApp', ci_email:'Correo', ci_addr:'Dirección', ci_addr_val:'Mexicali, Baja California, México', ci_hours:'Horario', ci_hours_val:'Lunes a Viernes 9:00–18:00 · Sábado 9:00–14:00',
       qf_name:'Nombre', qf_name_ph:'Tu nombre', qf_contact:'Teléfono o correo', qf_contact_ph:'¿Cómo te contactamos?', qf_bike:'Moto (marca / modelo / año)', qf_bike_ph:'Ej. KTM 250 SX-F 2023', qf_service:'Servicio',
-      qf_o1:'Revalve de suspensión', qf_o2:'Servicio de suspensión', qf_o3:'Resortes / kits / ride height', qf_o4:'Servicio de motor', qf_o5:'Bike build completo', qf_o6:'Soporte en pista', qf_o7:'Otro',
+      qf_o0:'— Selecciona un servicio —', qf_o1:'Revalve de suspensión', qf_o2:'Servicio de suspensión', qf_o3:'Resortes / kits / ride height', qf_o4:'Servicio de motor', qf_o5:'Bike build completo', qf_o6:'Soporte en pista', qf_o7:'Otro',
       qf_msg:'Mensaje', qf_msg_ph:'Cuéntanos qué sientes en tu moto...', qf_btn:'Enviar',
       srf_tag:'Solicitud de servicio', srf_h2:'Hoja de servicio personalizada', srf_intro:'Llena la hoja según el servicio que necesitas. Entre más detalles nos des de tu moto y tu estilo de manejo, más preciso será el ajuste. Elige una pestaña:',
       tab_susp:'Suspensión', tab_susp_sub:'Forks · Shock · Revalve · Service', tab_motor:'Motor', tab_motor_sub:'Válvulas · Cilindro · Cabeza · Porting',
@@ -1141,7 +1142,7 @@
       contact_tag:'Contact', contact_h2:'Book your service',
       ci_phone:'Phone / WhatsApp', ci_email:'Email', ci_addr:'Address', ci_addr_val:'Mexicali, Baja California, Mexico', ci_hours:'Hours', ci_hours_val:'Mon–Fri 9:00–18:00 · Sat 9:00–14:00',
       qf_name:'Name', qf_name_ph:'Your name', qf_contact:'Phone or email', qf_contact_ph:'How do we reach you?', qf_bike:'Motorcycle (make / model / year)', qf_bike_ph:'e.g. KTM 250 SX-F 2023', qf_service:'Service',
-      qf_o1:'Suspension revalve', qf_o2:'Suspension service', qf_o3:'Springs / kits / ride height', qf_o4:'Engine service', qf_o5:'Complete bike build', qf_o6:'Track support', qf_o7:'Other',
+      qf_o0:'— Select a service —', qf_o1:'Suspension revalve', qf_o2:'Suspension service', qf_o3:'Springs / kits / ride height', qf_o4:'Engine service', qf_o5:'Complete bike build', qf_o6:'Track support', qf_o7:'Other',
       qf_msg:'Message', qf_msg_ph:'Tell us how your bike feels...', qf_btn:'Send',
       srf_tag:'Service request', srf_h2:'Personalized service sheet', srf_intro:'Fill in the sheet for the service you need. The more details about your bike and riding style, the more precise the tune. Pick a tab:',
       tab_susp:'Suspension', tab_susp_sub:'Forks · Shock · Revalve · Service', tab_motor:'Engine', tab_motor_sub:'Valves · Cylinder · Head · Porting',
@@ -1195,6 +1196,7 @@
   // envío del formulario rápido a Formspree
   document.getElementById('contact-form').addEventListener('submit', async function(e){
     e.preventDefault();
+    if(!this.checkValidity()){ this.reportValidity(); return; }
     const status = document.getElementById('form-status');
     status.style.color = '#565C64';
     status.textContent = T[cur].st_sending;
