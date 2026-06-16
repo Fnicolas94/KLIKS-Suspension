@@ -1218,6 +1218,7 @@
   document.querySelectorAll('.srf-form').forEach(form=>{
     form.addEventListener('submit', async function(e){
       e.preventDefault();
+      if(!this.checkValidity()){ this.reportValidity(); return; }
       const status = this.querySelector('.srf-status');
       status.style.color = '#565C64';
       status.textContent = T[cur].srf_sending;
